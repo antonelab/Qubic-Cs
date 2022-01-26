@@ -52,11 +52,23 @@
     <Compile Include="IntroForm.Designer.cs">
       <DependentUpon>IntroForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="MainForm3x3x3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="MainForm3x3x3.Designer.cs">
+      <DependentUpon>MainForm3x3x3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm4x4x4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm4x4x4.Designer.cs">
+      <DependentUpon>MainForm4x4x4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="level4Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="level4Form.Designer.cs">
+      <DependentUpon>level4Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +80,15 @@
     </Compile>
     <EmbeddedResource Include="IntroForm.resx">
       <DependentUpon>IntroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm3x3x3.resx">
+      <DependentUpon>MainForm3x3x3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm4x4x4.resx">
+      <DependentUpon>MainForm4x4x4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="level4Form.resx">
+      <DependentUpon>level4Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

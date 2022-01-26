@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Qubic
 {
-    public partial class MainForm : Form
+    public partial class MainForm4x4x4 : Form
     {
-        public MainForm()
+        public MainForm4x4x4()
         {
             InitializeComponent();
         }

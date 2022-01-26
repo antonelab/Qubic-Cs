@@ -28,7 +28,9 @@ namespace Qubic
         {
             if (flag == true)
             {
-                MessageBox.Show("Krenimo 3x3x3");
+                this.Hide();
+                var q3 = new MainForm3x3x3();
+                q3.Show();
             }
             else
             {
@@ -40,7 +42,9 @@ namespace Qubic
         {
             if (flag == true)
             {
-                MessageBox.Show("Krenimo 4x4x4");
+                this.Hide();
+                var q4 = new MainForm4x4x4();
+                q4.Show();
             }
             else
             {
