@@ -83,7 +83,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Qubic.cs" />
+    <Compile Include="QubicGame.cs" />
     <Compile Include="UserInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
