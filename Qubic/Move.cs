@@ -1,3 +1,5 @@
+using System;
+
 namespace Qubic
 {
     public class Move {
@@ -12,11 +14,11 @@ namespace Qubic
         mColumn = 0;
     }
     
-    public Move(String line){
-        String[] elements = line.split(",");
-        mLevel = Integer.parseInt(elements[0]);
-        mRow = Integer.parseInt(elements[1]);
-        mColumn = Integer.parseInt(elements[2]);
+    public Move(string line){
+        string[] elements = line.Split(',');
+        mLevel = int.Parse(elements[0]);
+        mRow = int.Parse(elements[1]);
+        mColumn = int.Parse(elements[2]);
     }
     
     public Move(int i, int j, int k){
@@ -31,19 +33,19 @@ namespace Qubic
     
     //pretvara Move u String
     //sluzi za ispis
-    public String ToString()
+    public override string ToString()
     {
         return mLevel + "," + mRow + "," + mColumn;
     }
     
-    public boolean Equals(Object o) {
+    public override bool Equals(Object o) {
         // Provjerava usporedujemo li objekt sa samim sobom
         if (o == this) {
             return true;
         }
   
         //Provjera je li o tipa Move
-        if (o is not Move) {
+        if (!(o is Move)) {
             return false;
         }
           

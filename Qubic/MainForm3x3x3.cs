@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Qubic
 {
-    public partial class MainForm3x3x3 : Form
+    public partial class MainForm3x3x3 : Gui
     {
         public MainForm3x3x3()
         {

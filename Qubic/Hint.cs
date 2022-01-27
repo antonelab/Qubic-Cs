@@ -1,31 +1,36 @@
+using System.Threading;
+using System;
+
 namespace Qubic
 {
-    public class Hint : Runnable{
-    private Cube cube;
-    private Player player;
+    public class Hint{
+        private Cube cube;
+        private Player player;
+        private Object gui;
 
-    public event EventHandler<Move> newHint;
+        public event EventHandler<Move> newHint;
     
-    Hint(Cube cube, Player player){
-        this.cube = cube;
-        this.player = player;
-    }
+        public Hint(Cube cube, Player player, Gui gui){
+            this.cube = cube;
+            this.player = player;
+            this.gui = gui;
+        }
     
-    public void run () {
-        Move hint = player.hint(cube);
-        try
-        {
-            Thread.sleep(10);
-            if(newHint != null)
+        public void run () {
+            Move hint = player.hint(cube);
+            try
             {
-                newHint(this, hint);
+                Thread.Sleep(10);
+                if(newHint != null)
+                {
+                    newHint(this, hint);
+                }
+            }
+            catch(ThreadInterruptedException ex)
+            {
+                Thread.CurrentThread.Interrupt();
             }
         }
-        catch(ThreadInterruptedException ex)
-        {
-            Thread.currentThread().Interrupt();
-        }
-    }
     
-}
+    }
 }

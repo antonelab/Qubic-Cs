@@ -1,14 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Threading;
+
 namespace Qubic
 {
     public class Player {
         //oznaka igraca
-        private char id;
-        public String name;
+        private char _id;
+        public string name;
 
         //algoritam min max
-        private Pair<Integer, Move> minMax(Cube cube, ArrayList<Move> moves, char id, int alpha, int beta, int maxDepth)
+        private Pair<Integer, Move> minMax(Cube cube, List<Move> moves, char id, int alpha, int beta, int maxDepth)
         {
-            Pair<Integer, Move> result = new Pair<>();
+            Pair<Integer, Move> result = new Pair<Integer, Move>();
             Integer value;
 
             //terminal state  
@@ -18,7 +22,7 @@ namespace Qubic
                 return result;
             }
 
-            int n = moves.size();
+            int n = moves.Count;
             Move move;
             Pair<Integer, Move> temp;
 
@@ -33,15 +37,16 @@ namespace Qubic
             if(id == 'X'){
                 result.first = -1000;
                 for(int i=0; i<n; i++){
-                    move = moves.remove(0);
+                    move = moves[0];
+                    moves.RemoveAt(0);
                     cube.play(move, 'X');
-                    temp = minMax(cube, (ArrayList) moves.clone(), 'O', alpha, beta, maxDepth-1);
-                    moves.add(move);
+                    temp = minMax(cube, new List<Move> (moves), 'O', alpha, beta, maxDepth-1);
+                    moves.Add(move);
                     cube.unPlay(move);
                     if(temp.first>result.first){
                         result.first=temp.first;
                         result.second = move;
-                        alpha = Math.max(alpha, result.first); 
+                        alpha = Math.Max(alpha, result.first); 
                     }
                     if (beta <= alpha) break;
                     //kad naidemo na 500 sigurno necemo naci bolje pa izlazimo
@@ -53,15 +58,16 @@ namespace Qubic
             else if(id == 'O'){
                 result.first=1000;
                 for(int i=0; i<n; i++){
-                    move = moves.remove(0);
+                    move = moves[0];
+                    moves.RemoveAt(0);
                     cube.play(move, 'O');
-                    temp = minMax(cube, (ArrayList) moves.clone(), 'X', alpha, beta, maxDepth-1);
-                    moves.add(move);
+                    temp = minMax(cube, new List<Move>(moves), 'X', alpha, beta, maxDepth-1);
+                    moves.Add(move);
                     cube.unPlay(move);
                     if(temp.first<result.first){
                         result.first=temp.first;
                         result.second=move;
-                        beta = Math.min(beta, result.first);
+                        beta = Math.Min(beta, result.first);
                     }
                     if (beta <= alpha) break;
                     //kad naidemo na -500 sigurno necemo naci bolje pa izlazimo
@@ -74,67 +80,67 @@ namespace Qubic
         //Konstruktor
         public Player(char id)
         {
-            this.id = id;
+            this._id = id;
         }
 
         //Funkcija vraca ime igraca
         public char id()
         {
-            return id;
+            return _id;
         }
         
         //Funkcija vraća optimalni potez
         public Move hint(Cube cube){
             //Console.WriteLine("Hint za " + id);
-            Pair<Integer, Move> result = new Pair<>();
-            ArrayList<Move> moves = cube.generate_moves();
-            Collections.shuffle(moves);
+            Pair<Integer, Move> result = new Pair<Integer, Move>();
+            List<Move> moves = cube.generate_moves();
+            Shuffle(moves);
 
             int alpha = -1000;
             int beta = 1000;
             for(int i = 1; i <= cube.maxDepth(); i++){
                 try
                 {
-                    Thread.sleep(10);
-                    result = minMax(cube, moves, id, alpha, beta, i);
+                    Thread.Sleep(10);
+                    result = minMax(cube, moves, _id, alpha, beta, i);
                     //Console.WriteLine(i + "    " + result.first);
                     if(result.first==-500 || result.first==500)break;
                 }
-                catch(InterruptedException ex)
+                catch(ThreadInterruptedException ex)
                 {
-                    Thread.currentThread().interrupt();
+                    Thread.CurrentThread.Interrupt();
                     return null;
                 }
             }
 
-            if(id == 'O' && result.first > 0){
+            if(_id == 'O' && result.first > 0){
                 
                 for(int i = 1; i <= cube.maxDepth(); i++){
                     try
                     {
-                        Thread.sleep(10);
+                        Thread.Sleep(10);
                         result = minMax(cube, moves, 'X', alpha, beta, i);
                         if(result.first==-500 || result.first==500)break;
                     }
-                    catch(InterruptedException ex)
+                    catch(ThreadInterruptedException ex)
                     {
-                        Thread.currentThread().interrupt();
+                        Thread.CurrentThread.Interrupt();
                         return null;
                     }  
                 }
             }
 
-            else if(id == 'X' && result.first < 0){
+            else if(_id == 'X' && result.first < 0){
                 for(int i = 1; i <= cube.maxDepth(); i++){
                     try
                     {
-                        Thread.sleep(10);
+                        Thread.Sleep(10);
                         result = minMax(cube, moves, 'O', alpha, beta, i);
                         if(result.first==-500 || result.first==500)break;
                     }
-                    catch(InterruptedException ex)
+                    catch(ThreadInterruptedException ex)
                     {
-                        Thread.currentThread().interrupt();
+                        Thread.CurrentThread.Interrupt();
                         return null;
                     }
                 }
@@ -143,7 +149,22 @@ namespace Qubic
             //Console.WriteLine(result.second);
             return result.second;
         }
-        
+
+        //Funkcija koja stvara slucajan poredak u listi
+        private static Random rng = new Random();
+        public void Shuffle<T>(IList<T> list)
+        {
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
+
         //Funkcija kojom se izvrsava potez igraca
         /**public void play(Cube cube, Move move)
         {

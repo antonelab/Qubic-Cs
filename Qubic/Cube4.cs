@@ -1,8 +1,11 @@
+using System;
+using System.Collections.Generic;
+
 namespace Qubic
 {
     public class Cube4 : Cube {
         //prvi indeks oznacava nivo, drugi redak i treći stupac
-        private char[][][] cube = new char[4][4][4];
+        private char[][][] cube = new char[4][][];
         
         //broj odigranih poteza <=> broj znakova igraca na tabli
         private int mNumber;
@@ -57,6 +60,7 @@ namespace Qubic
         
         public Cube4(int number, char[][][] old)
         {
+            clear();
             mNumber=number;
             for(int i=0; i<4; i++)
                 for(int j=0; j<4; j++)
@@ -66,7 +70,15 @@ namespace Qubic
         //cisti kocku
         public void clear()
         {
-            mNumber=0;
+            mNumber = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                cube[i] = new char[4][];
+                for (int j = 0; j < 4; j++)
+                {
+                    cube[i][j] = new char[4];
+                }
+            }
             for(int i=0; i<4; i++)
                 for(int j=0; j<4; j++)
                     for(int k=0; k<4; k++)
@@ -90,14 +102,14 @@ namespace Qubic
         }
         
         //ova funkcija generira sve moguće poteze na tabli, sprema ih u vektor
-        public ArrayList<Move> generate_moves()
+        public List<Move> generate_moves()
         {
-            ArrayList<Move> moves = new ArrayList<Move>();
+            List<Move> moves = new List<Move>();
             for(int i=0;i<4;i++){
                 for(int j=0;j<4;j++){
                     for(int k=0;k<4;k++){
                         if(cube[i][j][k]==' '){
-                            moves.add( new Move(i,j,k) );
+                            moves.Add( new Move(i,j,k) );
                         }
                     }
                 }
@@ -106,7 +118,7 @@ namespace Qubic
         }
         
         //provjerava jeli potez valjan
-        public boolean isValid(Move move)
+        public bool isValid(Move move)
         {
             if(move.level()<0 || move.level()>3) return false;
             if(move.row()<0 || move.row()>3) return false;
@@ -116,7 +128,7 @@ namespace Qubic
         }
         
         //odigra potez Move sa znakom char
-        public boolean play(Move move,char c)
+        public bool play(Move move,char c)
         {
             if(!isValid(move)) return false;
             cube[move.level()][move.row()][move.column()] = c;
@@ -145,11 +157,13 @@ namespace Qubic
         {
             //idem po svim winning lines i brojim koliko se znakova ukupno nalazi nasih i protivnikovih
             int result=0;
-            for(int i=0;i<4;i++){
+            int broj_pl;
+            int broj_op;
+            for (int i=0;i<4;i++){
                 //provjera po redcima
                 for(int j=0;j<4;j++){
-                    int broj_pl=0;
-                    int broj_op=0;
+                    broj_pl=0;
+                    broj_op=0;
                     for(int k=0;k<4;k++){
                         if(cube[i][j][k]==player) broj_pl++;
                         if(cube[i][j][k]==opponent) broj_op++;
@@ -167,8 +181,8 @@ namespace Qubic
                 }
                 //provjera po stupcima
                 for(int j=0;j<4;j++){
-                    int broj_pl=0;
-                    int broj_op=0;
+                    broj_pl=0;
+                    broj_op=0;
                     for(int k=0;k<4;k++){
                         if(cube[i][k][j]==player) broj_pl++;
                         if(cube[i][k][j]==opponent) broj_op++;
@@ -185,8 +199,8 @@ namespace Qubic
                     }
                 }
                 //provjera dvije dijagonale
-                int broj_pl=0;
-                int broj_op=0;
+                broj_pl=0;
+                broj_op=0;
                 for(int k=0;k<4;k++){
                     if(cube[i][k][k]==player) broj_pl++;
                     if(cube[i][k][k]==opponent) broj_op++;
@@ -222,8 +236,8 @@ namespace Qubic
             for(int i=0;i<4;i++){
                 //provjera po stupcima
                 for(int j=0;j<4;j++){
-                    int broj_pl=0;
-                    int broj_op=0;
+                    broj_pl=0;
+                    broj_op=0;
                     for(int k=0;k<4;k++){
                         if(cube[k][j][i]==player) broj_pl++;
                         if(cube[k][j][i]==opponent) broj_op++;
@@ -240,8 +254,8 @@ namespace Qubic
                     }
                 }
                 //provjera dvije dijagonale
-                int broj_pl=0;
-                int broj_op=0;
+                broj_pl=0;
+                broj_op=0;
                 for(int k=0;k<4;k++){
                     if(cube[k][k][i]==player) broj_pl++;
                     if(cube[k][k][i]==opponent) broj_op++;
@@ -275,8 +289,8 @@ namespace Qubic
             }
             //fale mi dijagonale po redcima
             for(int i=0;i<4;i++){
-                int broj_pl=0;
-                int broj_op=0;
+                broj_pl=0;
+                broj_op=0;
                 for(int k=0;k<4;k++){
                     if(cube[k][i][k]==player) broj_pl++;
                     if(cube[k][i][k]==opponent) broj_op++;
@@ -309,8 +323,8 @@ namespace Qubic
                 }
             }
             //unutrasnje dijagonale
-            int broj_pl=0;
-            int broj_op=0;
+            broj_pl=0;
+            broj_op=0;
             for(int i=0;i<4;i++){
                 if(cube[i][i][i]==player) broj_pl++;
                 else if(cube[i][i][i]==opponent) broj_op++;
