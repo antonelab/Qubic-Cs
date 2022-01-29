@@ -18,6 +18,8 @@ namespace Qubic
             InitializeComponent();
             db = new database();
 
+            nameLabel.Text += "  " + player;
+
             xWins4.Text = db.playerResultCount(player, "X", 1, "4x4x4");
             xWins3.Text = db.playerResultCount(player, "X", 1, "3x3x3");
             xDraw3.Text = db.playerResultCount(player, "X", -1, "3x3x3");

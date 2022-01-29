@@ -1,7 +1,7 @@
 ﻿
 namespace Qubic
 {
-    partial class level4Form
+    partial class level4Control
     {
         /// <summary> 
         /// Required designer variable.

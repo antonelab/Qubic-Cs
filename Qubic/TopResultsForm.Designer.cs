@@ -73,11 +73,11 @@ namespace Qubic
             // xTop3
             // 
             this.xTop3.AutoSize = true;
-            this.xTop3.Font = new System.Drawing.Font("Franklin Gothic Demi", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xTop3.Font = new System.Drawing.Font("Franklin Gothic Demi", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xTop3.ForeColor = System.Drawing.Color.RosyBrown;
             this.xTop3.Location = new System.Drawing.Point(54, 30);
             this.xTop3.Name = "xTop3";
-            this.xTop3.Size = new System.Drawing.Size(234, 30);
+            this.xTop3.Size = new System.Drawing.Size(270, 36);
             this.xTop3.TabIndex = 0;
             this.xTop3.Text = "aaaaaaaaaaaaaaaaa";
             // 
@@ -95,11 +95,11 @@ namespace Qubic
             // oTop3
             // 
             this.oTop3.AutoSize = true;
-            this.oTop3.Font = new System.Drawing.Font("Franklin Gothic Demi", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oTop3.Font = new System.Drawing.Font("Franklin Gothic Demi", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.oTop3.ForeColor = System.Drawing.Color.RosyBrown;
             this.oTop3.Location = new System.Drawing.Point(54, 44);
             this.oTop3.Name = "oTop3";
-            this.oTop3.Size = new System.Drawing.Size(234, 30);
+            this.oTop3.Size = new System.Drawing.Size(270, 36);
             this.oTop3.TabIndex = 1;
             this.oTop3.Text = "aaaaaaaaaaaaaaaaa";
             // 
@@ -117,11 +117,11 @@ namespace Qubic
             // xTop4
             // 
             this.xTop4.AutoSize = true;
-            this.xTop4.Font = new System.Drawing.Font("Franklin Gothic Demi", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xTop4.Font = new System.Drawing.Font("Franklin Gothic Demi", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xTop4.ForeColor = System.Drawing.Color.DarkSeaGreen;
             this.xTop4.Location = new System.Drawing.Point(43, 46);
             this.xTop4.Name = "xTop4";
-            this.xTop4.Size = new System.Drawing.Size(234, 30);
+            this.xTop4.Size = new System.Drawing.Size(270, 36);
             this.xTop4.TabIndex = 1;
             this.xTop4.Text = "aaaaaaaaaaaaaaaaa";
             // 
@@ -139,11 +139,11 @@ namespace Qubic
             // oTop4
             // 
             this.oTop4.AutoSize = true;
-            this.oTop4.Font = new System.Drawing.Font("Franklin Gothic Demi", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oTop4.Font = new System.Drawing.Font("Franklin Gothic Demi", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.oTop4.ForeColor = System.Drawing.Color.DarkSeaGreen;
             this.oTop4.Location = new System.Drawing.Point(36, 37);
             this.oTop4.Name = "oTop4";
-            this.oTop4.Size = new System.Drawing.Size(234, 30);
+            this.oTop4.Size = new System.Drawing.Size(270, 36);
             this.oTop4.TabIndex = 2;
             this.oTop4.Text = "aaaaaaaaaaaaaaaaa";
             // 
