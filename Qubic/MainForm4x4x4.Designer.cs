@@ -62,15 +62,15 @@ namespace Qubic
             this.rulesMenu});
             this.newMenu.Location = new System.Drawing.Point(0, 0);
             this.newMenu.Name = "newMenu";
-            this.newMenu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.newMenu.Size = new System.Drawing.Size(708, 24);
+            this.newMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.newMenu.Size = new System.Drawing.Size(1000, 28);
             this.newMenu.TabIndex = 0;
             this.newMenu.Text = "menuStrip1";
             // 
             // novaIgraToolStripMenuItem
             // 
             this.novaIgraToolStripMenuItem.Name = "novaIgraToolStripMenuItem";
-            this.novaIgraToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.novaIgraToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.novaIgraToolStripMenuItem.Text = "Nova igra";
             // 
             // closeMenu
@@ -79,25 +79,25 @@ namespace Qubic
             this.predajaXIgračaToolStripMenuItem,
             this.predajaOIgračaToolStripMenuItem});
             this.closeMenu.Name = "closeMenu";
-            this.closeMenu.Size = new System.Drawing.Size(74, 20);
+            this.closeMenu.Size = new System.Drawing.Size(92, 24);
             this.closeMenu.Text = "Završi igru";
             // 
             // predajaXIgračaToolStripMenuItem
             // 
             this.predajaXIgračaToolStripMenuItem.Name = "predajaXIgračaToolStripMenuItem";
-            this.predajaXIgračaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.predajaXIgračaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.predajaXIgračaToolStripMenuItem.Text = "Predaja X igrača";
             // 
             // predajaOIgračaToolStripMenuItem
             // 
             this.predajaOIgračaToolStripMenuItem.Name = "predajaOIgračaToolStripMenuItem";
-            this.predajaOIgračaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.predajaOIgračaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.predajaOIgračaToolStripMenuItem.Text = "Predaja O igrača";
             // 
             // resultsMenu
             // 
             this.resultsMenu.Name = "resultsMenu";
-            this.resultsMenu.Size = new System.Drawing.Size(105, 20);
+            this.resultsMenu.Size = new System.Drawing.Size(134, 24);
             this.resultsMenu.Text = "Najbolji rezultati";
             this.resultsMenu.Click += new System.EventHandler(this.resultsMenu_Click);
             this.resultsMenu.DoubleClick += new System.EventHandler(this.resultsMenu_Click);
@@ -108,27 +108,27 @@ namespace Qubic
             this.xStatMenu,
             this.oStatMenu});
             this.statMenu.Name = "statMenu";
-            this.statMenu.Size = new System.Drawing.Size(66, 20);
+            this.statMenu.Size = new System.Drawing.Size(83, 24);
             this.statMenu.Text = "Statistika";
             // 
             // xStatMenu
             // 
             this.xStatMenu.Name = "xStatMenu";
-            this.xStatMenu.Size = new System.Drawing.Size(168, 22);
+            this.xStatMenu.Size = new System.Drawing.Size(212, 26);
             this.xStatMenu.Text = "Statistika X igrača";
             this.xStatMenu.Click += new System.EventHandler(this.xStatMenu_Click);
             // 
             // oStatMenu
             // 
             this.oStatMenu.Name = "oStatMenu";
-            this.oStatMenu.Size = new System.Drawing.Size(168, 22);
+            this.oStatMenu.Size = new System.Drawing.Size(212, 26);
             this.oStatMenu.Text = "Statistika O igrača";
             this.oStatMenu.Click += new System.EventHandler(this.oStatMenu_Click);
             // 
             // rulesMenu
             // 
             this.rulesMenu.Name = "rulesMenu";
-            this.rulesMenu.Size = new System.Drawing.Size(54, 20);
+            this.rulesMenu.Size = new System.Drawing.Size(67, 24);
             this.rulesMenu.Text = "Pravila";
             this.rulesMenu.Click += new System.EventHandler(this.rulesMenuClicked);
             this.rulesMenu.DoubleClick += new System.EventHandler(this.rulesMenuClicked);
@@ -139,10 +139,9 @@ namespace Qubic
             this.xNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.xNameLabel.Font = new System.Drawing.Font("Stencil", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xNameLabel.ForeColor = System.Drawing.Color.RosyBrown;
-            this.xNameLabel.Location = new System.Drawing.Point(361, 130);
-            this.xNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.xNameLabel.Location = new System.Drawing.Point(481, 160);
             this.xNameLabel.Name = "xNameLabel";
-            this.xNameLabel.Size = new System.Drawing.Size(94, 32);
+            this.xNameLabel.Size = new System.Drawing.Size(114, 39);
             this.xNameLabel.TabIndex = 1;
             this.xNameLabel.Text = "X: ime";
             // 
@@ -150,10 +149,9 @@ namespace Qubic
             // 
             this.oNameLabel.AutoSize = true;
             this.oNameLabel.Font = new System.Drawing.Font("Stencil", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oNameLabel.Location = new System.Drawing.Point(361, 239);
-            this.oNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.oNameLabel.Location = new System.Drawing.Point(481, 294);
             this.oNameLabel.Name = "oNameLabel";
-            this.oNameLabel.Size = new System.Drawing.Size(95, 32);
+            this.oNameLabel.Size = new System.Drawing.Size(115, 39);
             this.oNameLabel.TabIndex = 2;
             this.oNameLabel.Text = "O: ime";
             // 
@@ -161,10 +159,9 @@ namespace Qubic
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(400, 184);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(533, 226);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 24);
+            this.label1.Size = new System.Drawing.Size(37, 30);
             this.label1.TabIndex = 3;
             this.label1.Text = "vs";
             // 
@@ -177,10 +174,9 @@ namespace Qubic
             // 
             this.LabelMove.AutoSize = true;
             this.LabelMove.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelMove.Location = new System.Drawing.Point(362, 687);
-            this.LabelMove.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LabelMove.Location = new System.Drawing.Point(483, 846);
             this.LabelMove.Name = "LabelMove";
-            this.LabelMove.Size = new System.Drawing.Size(109, 28);
+            this.LabelMove.Size = new System.Drawing.Size(138, 36);
             this.LabelMove.TabIndex = 4;
             this.LabelMove.Text = "Broj poteza:";
             // 
@@ -188,10 +184,10 @@ namespace Qubic
             // 
             this.hintButton.BackColor = System.Drawing.Color.RosyBrown;
             this.hintButton.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hintButton.Location = new System.Drawing.Point(366, 444);
-            this.hintButton.Margin = new System.Windows.Forms.Padding(2);
+            this.hintButton.Location = new System.Drawing.Point(488, 546);
+            this.hintButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hintButton.Name = "hintButton";
-            this.hintButton.Size = new System.Drawing.Size(114, 45);
+            this.hintButton.Size = new System.Drawing.Size(152, 55);
             this.hintButton.TabIndex = 5;
             this.hintButton.Text = "Hint";
             this.hintButton.UseVisualStyleBackColor = false;
@@ -202,10 +198,9 @@ namespace Qubic
             this.nbMoveLabel.AutoSize = true;
             this.nbMoveLabel.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nbMoveLabel.ForeColor = System.Drawing.Color.Black;
-            this.nbMoveLabel.Location = new System.Drawing.Point(470, 687);
-            this.nbMoveLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nbMoveLabel.Location = new System.Drawing.Point(627, 846);
             this.nbMoveLabel.Name = "nbMoveLabel";
-            this.nbMoveLabel.Size = new System.Drawing.Size(23, 28);
+            this.nbMoveLabel.Size = new System.Drawing.Size(29, 36);
             this.nbMoveLabel.TabIndex = 6;
             this.nbMoveLabel.Text = "0";
             // 
@@ -221,7 +216,7 @@ namespace Qubic
             // 
             // MainForm4x4x4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(708, 716);
@@ -234,9 +229,10 @@ namespace Qubic
             this.Controls.Add(this.xNameLabel);
             this.Controls.Add(this.newMenu);
             this.MainMenuStrip = this.newMenu;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(724, 704);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "MainForm4x4x4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Qubic - 4x4x4 varijanta";
             this.newMenu.ResumeLayout(false);
             this.newMenu.PerformLayout();

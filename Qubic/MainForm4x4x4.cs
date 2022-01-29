@@ -35,6 +35,9 @@ namespace Qubic
             this.oPlayer = oPlayer;
             this.type = type;
             InitializeComponent();
+            this.ClientSize = new System.Drawing.Size(950, 960);
+            this.MinimumSize = new System.Drawing.Size(900, 930);
+            SuspendLayout();
             db = new database();
 
             FormClosing += (sender, e) => { gameThread.Interrupt(); gameThread.Join(); };
