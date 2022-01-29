@@ -17,44 +17,45 @@ namespace Qubic
         //polje od dva igrača
         public Player player;
 
+        public event EventHandler<Player> winner;
+
         //stvara uvijete za početak igre
         public QubicGame(int gameType, Gui app)
         {
-            //System.out.println("Odaberite verziju igre:");
-            //System.out.println("Za igru na kocki 3X3X3 odaberite 3");
-            //System.out.println("Za igru na kocki 4X4X4 odaberite 4");
-            //System.out.println("Vas odabir: ");
+            //Console.WriteLine("Odaberite verziju igre:");
+            //Console.WriteLine("Za igru na kocki 3X3X3 odaberite 3");
+            //Console.WriteLine("Za igru na kocki 4X4X4 odaberite 4");
+            //Console.WriteLine("Vas odabir: ");
 
             //int gameType;
-            //Scanner myInput = new Scanner( System.in );
-            //gameType = myInput.nextInt();
-            //System.out.println("\n\n");
+            //gameType = int.Parse(Console.ReadLine());
+            //Console.WriteLine("\n\n");
             gui = app;
             player = gui.players.Item1;
             if (gameType == 3)
             {
                 mCube = new Cube3();
-                //System.out.println("----IGRA KRIZIC-KRUZIC U 3D NA 3X3X3 KOCKI ZAPOCINJE----\n");
+                //Console.WriteLine("----IGRA KRIZIC-KRUZIC U 3D NA 3X3X3 KOCKI ZAPOCINJE----\n");
             }
             else
             {
                 mCube = new Cube4();
-                //System.out.println("----IGRA KRIZIC-KRUZIC U 3D NA 4X4X4 KOCKI ZAPOCINJE----\n");
+                //Console.WriteLine("----IGRA KRIZIC-KRUZIC U 3D NA 4X4X4 KOCKI ZAPOCINJE----\n");
             }
         }
 
         //implementira logiku igre
-        public Player play()
+        public void play()
         {
-            Player winner = null;
-            int result;
+            Integer result;
             int playerOnMove = 0;
 
             //mCube.print();
             result = mCube.result();
             while (result == null)
             {
-                Hint hint = new Hint(mCube.clone(), gui.player, gui);
+                player = gui.player;
+                Hint hint = new Hint(mCube.clone(), player, gui);
                 hintThread = new Thread(new ThreadStart(hint.run));
                 hintThread.Start();
                 while (move == null)
@@ -65,9 +66,11 @@ namespace Qubic
                     }
                     catch (ThreadInterruptedException ex)
                     {
+                        hintThread.Interrupt();
                         Thread.CurrentThread.Interrupt();
                     }
                 }
+                hintThread.Interrupt();
                 //mPlayers[playerOnMove].play(mCube, move);
                 mCube.play(move, player.id());
                 move = null;
@@ -76,11 +79,10 @@ namespace Qubic
                 result = mCube.result();
             }
             if (result == 500)
-                winner = gui.players.Item1;
+                winner(this, gui.players.Item1);
 
             else if (result == -500)
-                winner = gui.players.Item2;
-            return winner;
+                winner(this, gui.players.Item1);
         }
     }
 }

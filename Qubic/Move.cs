@@ -37,6 +37,11 @@ namespace Qubic
     {
         return mLevel + "," + mRow + "," + mColumn;
     }
+
+    public Tuple<int, int, int> ToTuple()
+        {
+            return Tuple.Create(mLevel, mRow, mColumn);
+        }
     
     public override bool Equals(Object o) {
         // Provjerava usporedujemo li objekt sa samim sobom

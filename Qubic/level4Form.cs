@@ -26,8 +26,13 @@ namespace Qubic
                 string tag = (string)((Button)sender).Tag;
                 int i = tag[0] - '0';
                 int j = tag[1] - '0';
-                btnClicked(this, Tuple.Create(i, j));
+                btnClicked(sender, Tuple.Create(i, j));
             }
+        }
+
+        public Object this[string key]
+        {
+            get => this.Controls[key];
         }
     }
 }
