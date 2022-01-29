@@ -17,7 +17,7 @@ namespace Qubic
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new IntroForm());
-            //Application.Run(new MainForm4x4x4());
+            //Application.Run(new StatForm());
             //Application.Run(new MainForm3x3x3());
         }
     }

@@ -111,6 +111,18 @@
     <Compile Include="RulesForm.Designer.cs">
       <DependentUpon>RulesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatForm.Designer.cs">
+      <DependentUpon>StatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TopResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopResultsForm.Designer.cs">
+      <DependentUpon>TopResultsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,6 +155,12 @@
     </Compile>
     <EmbeddedResource Include="RulesForm.resx">
       <DependentUpon>RulesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatForm.resx">
+      <DependentUpon>StatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopResultsForm.resx">
+      <DependentUpon>TopResultsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInput.resx">
       <DependentUpon>UserInput.cs</DependentUpon>
