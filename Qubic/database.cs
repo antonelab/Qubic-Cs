@@ -19,13 +19,19 @@ namespace Qubic
                                       Integrated Security=True";
         }
 
-        public List<String> xStatistic()
+        public String playerResultCount(string p, string label, int res, string type)
         {
+            string nbWins;
+            string nb = "";
+
+            nbWins = @"SELECT COUNT(*) AS nb "
+                    + "FROM Results "
+                    + "WHERE Result = " + res.ToString()
+                    + " AND Type = \'" + type 
+                    + "\' AND Player_" + label + " =\'" + p + "\'; ";
+            //Console.WriteLine(nbWins);
             
-            var stat = new List<String>();
-            /*
-            string nbXWins = "select Player_X, count(*) from Results;";
-            SqlCommand com = new SqlCommand(selectSql, conn);
+            SqlCommand com = new SqlCommand(nbWins, conn);
 
             try
             {
@@ -35,7 +41,7 @@ namespace Qubic
                 {
                     while (read.Read())
                     {
-                        imena.Add(read["Player_X"].ToString());
+                        nb = read["nb"].ToString();
                     }
                 }
             }
@@ -47,9 +53,121 @@ namespace Qubic
             {
                 conn.Close();
             }
-            */
-            return stat;
+            if (nb.Equals("")) nb = "0";
+            return nb;
             
+        }
+
+        public String totalGames(string p, string type)
+        {
+            string total;
+            string nb = "";
+            total = @"SELECT COUNT(*) AS nb "
+                    + "FROM Results "
+                    + " WHERE Type = \'" + type
+                    + "\' AND (Player_X =\'" + p + "\'"
+                    + " OR Player_O =\'" + p + "\'); ";
+      
+            SqlCommand com = new SqlCommand(total, conn);
+
+            try
+            {
+                conn.Open();
+
+                using (SqlDataReader read = com.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        nb = read["nb"].ToString();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            if (nb.Equals("")) nb = "0";
+            return nb;
+
+        }
+        public String movesAvg(string p, string type)
+        {
+            string total;
+            string nb = "";
+            total = @"SELECT AVG(Moves) AS nb "
+                    + "FROM Results "
+                    + " WHERE Type = \'" + type
+                    + "\' AND (Player_X =\'" + p + "\'"
+                    + " OR Player_O =\'" + p + "\'); ";
+
+            SqlCommand com = new SqlCommand(total, conn);
+
+            try
+            {
+                conn.Open();
+
+                using (SqlDataReader read = com.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        nb = read["nb"].ToString();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            if (nb.Equals("")) nb = "0";
+            return nb;
+
+        }
+
+        public String lastPlayed(string p, string type)
+        {
+            string l;
+            string nb = "";
+            l = @"SELECT Date AS d "
+                    + "FROM Results "
+                    + " WHERE Type = \'" + type
+                    + "\' AND (Player_X =\'" + p + "\'"
+                    + " OR Player_O =\'" + p + "\')"
+                    + " ORDER BY Date DESC; ";
+
+            SqlCommand com = new SqlCommand(l, conn);
+
+            try
+            {
+                conn.Open();
+
+                using (SqlDataReader read = com.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        nb = read["d"].ToString();
+                        break;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            if (nb.Equals("")) nb = "-";
+            return nb;
+
         }
     }
 }

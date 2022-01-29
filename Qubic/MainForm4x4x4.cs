@@ -32,6 +32,17 @@ namespace Qubic
             xNameLabel.Text = "IME: " + xPlayer;
             oNameLabel.Text = "IME: " + oPlayer;
 
+            //za kompjuter moramo zablokirat statistiku i predaju
+            if (xPlayer.Equals("kompjuter"))
+            {
+                statMenu.DropDownItems[0].Enabled = false;
+                closeMenu.DropDownItems[0].Enabled = false;
+            }
+            if (oPlayer.Equals("kompjuter"))
+            {
+                statMenu.DropDownItems[1].Enabled = false;
+                closeMenu.DropDownItems[1].Enabled = false;
+            }
         }
 
         public void rulesMenuClicked(object sender, EventArgs e)
@@ -42,7 +53,7 @@ namespace Qubic
 
         private void xStatMenu_Click(object sender, EventArgs e)
         {
-            var p = new StatForm(xPlayer, 4);
+            var p = new StatForm(xPlayer);
             p.Show();
         }
 
@@ -54,7 +65,7 @@ namespace Qubic
 
         private void oStatMenu_Click(object sender, EventArgs e)
         {
-            var p = new StatForm(oPlayer, 4);
+            var p = new StatForm(oPlayer);
             p.Show();
         }
     }
