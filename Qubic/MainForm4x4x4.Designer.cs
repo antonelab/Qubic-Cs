@@ -47,10 +47,10 @@ namespace Qubic
             this.LabelMove = new System.Windows.Forms.Label();
             this.hintButton = new System.Windows.Forms.Button();
             this.nbMoveLabel = new System.Windows.Forms.Label();
-            this.level4Form1 = new Qubic.level4Form();
-            this.level4Form2 = new Qubic.level4Form();
-            this.level4Form3 = new Qubic.level4Form();
-            this.level4Form4 = new Qubic.level4Form();
+            this.level4Form1 = new Qubic.level4Control();
+            this.level4Form2 = new Qubic.level4Control();
+            this.level4Form3 = new Qubic.level4Control();
+            this.level4Form4 = new Qubic.level4Control();
             this.newMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -289,10 +289,10 @@ namespace Qubic
         private System.Windows.Forms.Label nbMoveLabel;
         private System.Windows.Forms.ToolStripMenuItem rulesMenu;
         private System.Windows.Forms.ToolStripMenuItem novaIgraToolStripMenuItem;
-        private level4Form level4Form1;
-        private level4Form level4Form2;
-        private level4Form level4Form3;
-        private level4Form level4Form4;
+        private level4Control level4Form1;
+        private level4Control level4Form2;
+        private level4Control level4Form3;
+        private level4Control level4Form4;
         private System.Windows.Forms.ToolStripMenuItem statMenu;
         private System.Windows.Forms.ToolStripMenuItem xStatMenu;
         private System.Windows.Forms.ToolStripMenuItem oStatMenu;

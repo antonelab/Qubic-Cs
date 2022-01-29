@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Qubic
 {
-    public partial class level4Form : UserControl
+    public partial class level4Control : UserControl
     {
        public event EventHandler<Tuple<int, int>> btnClicked;
         
-        public level4Form()
+        public level4Control()
         {
             InitializeComponent();
         }

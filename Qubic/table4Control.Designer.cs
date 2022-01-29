@@ -1,7 +1,7 @@
 ﻿
 namespace Qubic
 {
-    partial class table4
+    partial class table4Control
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,10 +29,10 @@ namespace Qubic
         /// </summary>
         private void InitializeComponent()
         {
-            this.l4Form4 = new Qubic.level4Form();
-            this.l4Form3 = new Qubic.level4Form();
-            this.l4Form2 = new Qubic.level4Form();
-            this.l4Form1 = new Qubic.level4Form();
+            this.l4Form4 = new Qubic.level4Control();
+            this.l4Form3 = new Qubic.level4Control();
+            this.l4Form2 = new Qubic.level4Control();
+            this.l4Form1 = new Qubic.level4Control();
             this.SuspendLayout();
             // 
             // l4Form4
@@ -84,9 +84,9 @@ namespace Qubic
 
         #endregion
 
-        private level4Form l4Form4;
-        private level4Form l4Form3;
-        private level4Form l4Form2;
-        private level4Form l4Form1;
+        private level4Control l4Form4;
+        private level4Control l4Form3;
+        private level4Control l4Form2;
+        private level4Control l4Form1;
     }
 }

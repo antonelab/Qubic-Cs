@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Qubic
 {
-    public partial class level3Form : UserControl
+    public partial class table4Control : UserControl
     {
-        public level3Form()
+        public table4Control()
         {
             InitializeComponent();
         }

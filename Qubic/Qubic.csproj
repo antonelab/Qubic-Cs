@@ -78,6 +78,12 @@
     <Compile Include="IntroForm.Designer.cs">
       <DependentUpon>IntroForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="level3Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="level3Control.Designer.cs">
+      <DependentUpon>level3Control.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm3x3x3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,11 +96,11 @@
     <Compile Include="MainForm4x4x4.Designer.cs">
       <DependentUpon>MainForm4x4x4.cs</DependentUpon>
     </Compile>
-    <Compile Include="level4Form.cs">
+    <Compile Include="level4Control.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="level4Form.Designer.cs">
-      <DependentUpon>level4Form.cs</DependentUpon>
+    <Compile Include="level4Control.Designer.cs">
+      <DependentUpon>level4Control.cs</DependentUpon>
     </Compile>
     <Compile Include="Move.cs" />
     <Compile Include="Pair.cs" />
@@ -119,6 +125,18 @@
     <Compile Include="StatForm.Designer.cs">
       <DependentUpon>StatForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="table3Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="table3Control.Designer.cs">
+      <DependentUpon>table3Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="table4Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="table4Control.Designer.cs">
+      <DependentUpon>table4Control.cs</DependentUpon>
+    </Compile>
     <Compile Include="TopResultsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,14 +155,17 @@
     <EmbeddedResource Include="IntroForm.resx">
       <DependentUpon>IntroForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="level3Control.resx">
+      <DependentUpon>level3Control.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm3x3x3.resx">
       <DependentUpon>MainForm3x3x3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm4x4x4.resx">
       <DependentUpon>MainForm4x4x4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="level4Form.resx">
-      <DependentUpon>level4Form.cs</DependentUpon>
+    <EmbeddedResource Include="level4Control.resx">
+      <DependentUpon>level4Control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -160,6 +181,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StatForm.resx">
       <DependentUpon>StatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="table3Control.resx">
+      <DependentUpon>table3Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="table4Control.resx">
+      <DependentUpon>table4Control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TopResultsForm.resx">
       <DependentUpon>TopResultsForm.cs</DependentUpon>

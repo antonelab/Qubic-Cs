@@ -180,7 +180,7 @@ namespace Qubic
                 + "AND (Result = 1 OR Result = -1) "
                 + "GROUP BY Player_" + label + " ORDER BY b DESC;"; 
 
-            Console.WriteLine(l);
+            //Console.WriteLine(l);
             SqlCommand com = new SqlCommand(l, conn);
 
             try
@@ -189,12 +189,15 @@ namespace Qubic
 
                 using (SqlDataReader read = com.ExecuteReader())
                 {
+                    int counter = 1;
                     while (read.Read())
                     {
+                        list += counter.ToString() + ".  ";
                         list += read["name"].ToString();
                         list += "   ";
                         list += read["b"].ToString();
                         list += "\n";
+                        counter++;
                     }
                 }
             }
