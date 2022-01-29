@@ -17,6 +17,10 @@ namespace Qubic
         {
             InitializeComponent();
             db = new database();
+            xTop3.Text = db.topPlayers("X", "3x3x3");
+            oTop3.Text = db.topPlayers("O", "3x3x3");
+            xTop4.Text = db.topPlayers("X", "4x4x4");
+            oTop4.Text = db.topPlayers("O", "4x4x4");
         }
     }
 }

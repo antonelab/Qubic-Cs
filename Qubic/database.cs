@@ -169,5 +169,46 @@ namespace Qubic
             return nb;
 
         }
+        public String topPlayers(string label, string type)
+        {
+            string l="";
+            string list = "";
+            l = @"SELECT TOP 10 Player_" + label + " AS name, "
+                + "SUM(CASE WHEN Result = -1 THEN 0.5 ELSE 1 END) AS b "
+                + "FROM Results "
+                + "WHERE Type = \'" + type + "\' "
+                + "AND (Result = 1 OR Result = -1) "
+                + "GROUP BY Player_" + label + " ORDER BY b DESC;"; 
+
+            Console.WriteLine(l);
+            SqlCommand com = new SqlCommand(l, conn);
+
+            try
+            {
+                conn.Open();
+
+                using (SqlDataReader read = com.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        list += read["name"].ToString();
+                        list += "   ";
+                        list += read["b"].ToString();
+                        list += "\n";
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            if (list.Equals("")) list = "-";
+            return list;
+
+        }
     }
 }
