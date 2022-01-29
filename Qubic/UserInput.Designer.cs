@@ -121,10 +121,10 @@ namespace Qubic
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox xComputer;
-        private System.Windows.Forms.TextBox xName;
-        private System.Windows.Forms.TextBox oName;
-        private System.Windows.Forms.CheckBox oComputer;
+        public System.Windows.Forms.CheckBox xComputer;
+        public System.Windows.Forms.TextBox xName;
+        public System.Windows.Forms.TextBox oName;
+        public System.Windows.Forms.CheckBox oComputer;
         private System.Windows.Forms.Label label2;
     }
 }

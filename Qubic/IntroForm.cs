@@ -34,7 +34,7 @@ namespace Qubic
             }
             else
             {
-                MessageBox.Show("Nije moguće krenuti s igrom! \nUnesite imena igrača ili odaberite računalo kao protivnika.");
+                MessageBox.Show("Nije moguće krenuti s igrom! \nUnesite imena igrača ili odaberite računalo kao protivnika.", "Pogreška");
             }
         }
 
@@ -42,13 +42,20 @@ namespace Qubic
         {
             if (flag == true)
             {
+                //citanje imena igraca
+                string xPlayer;
+                string oPlayer;
+                if (userInput1.xComputer.Checked) xPlayer = "kompjuter";
+                else xPlayer = userInput1.xName.Text;
+                if (userInput1.oComputer.Checked) oPlayer = "kompjuter";
+                else oPlayer = userInput1.oName.Text;
                 this.Hide();
-                var q4 = new MainForm4x4x4();
+                var q4 = new MainForm4x4x4(xPlayer, oPlayer);
                 q4.Show();
             }
             else
             {
-                MessageBox.Show("Nije moguće krenuti s igrom! \nUnesite imena igrača ili odaberite računalo kao protivnika.");
+                MessageBox.Show("Nije moguće krenuti s igrom! \nUnesite imena igrača ili odaberite računalo kao protivnika.", "Pogreška");
             }
         }
     }
