@@ -88,9 +88,10 @@ namespace Qubic
             // 
             // userInput1
             // 
+            this.userInput1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.userInput1.Location = new System.Drawing.Point(207, 114);
             this.userInput1.Name = "userInput1";
-            this.userInput1.Size = new System.Drawing.Size(332, 281);
+            this.userInput1.Size = new System.Drawing.Size(332, 255);
             this.userInput1.TabIndex = 7;
             // 
             // IntroForm
