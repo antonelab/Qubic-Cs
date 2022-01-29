@@ -38,7 +38,6 @@ namespace Qubic
             xNameLabel.Text = "IME: " + xPlayer;
             oNameLabel.Text = "IME: " + oPlayer;
             hintButton.Enabled = false;
-        }
 
             //za kompjuter moramo zablokirat statistiku i predaju
             if (xPlayer.Equals("kompjuter"))
