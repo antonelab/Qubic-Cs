@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace Qubic
 {
-    public partial class table4 : UserControl
+    public partial class table4 : table
     {
         public table4()
         {
             InitializeComponent();
+            setEvents(4);
         }
     }
 }

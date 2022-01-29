@@ -11,18 +11,9 @@ namespace Qubic
 {
     public class Gui : Form
     {
-        static public string label = "X";
-        static public QubicGame game;
-        public Move hint = null;
-        public Tuple<Player, Player> players = Tuple.Create(new Player('X'), new Player('O'));
-        public Player player;
-        static public int nb_moves = 0;
-        static public Thread gameThread;
+        
 
-        public event EventHandler<Move> btnClicked;
-        public event EventHandler<Move> newHint;
-
-        public Gui() { }
+       /* public Gui() { }
         public Gui(int type)
         {
             game = new QubicGame(type, this);
@@ -80,6 +71,6 @@ namespace Qubic
             this.Name = "Gui";
             this.ResumeLayout(false);
 
-        }
+        }*/
     }
 }

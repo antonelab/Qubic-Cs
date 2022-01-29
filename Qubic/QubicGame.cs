@@ -12,7 +12,7 @@ namespace Qubic
         public Move move;
         //kocka na kojoj se igra
         private Cube mCube;
-        private Gui gui;
+        private MainForm4x4x4 gui;
         public Thread hintThread;
         //polje od dva igrača
         public Player player;
@@ -20,7 +20,7 @@ namespace Qubic
         public event EventHandler<Player> winner;
 
         //stvara uvijete za početak igre
-        public QubicGame(int gameType, Gui app)
+        public QubicGame(int gameType, MainForm4x4x4 app)
         {
             //Console.WriteLine("Odaberite verziju igre:");
             //Console.WriteLine("Za igru na kocki 3X3X3 odaberite 3");

@@ -50,7 +50,7 @@ namespace Qubic
                 if (userInput1.oComputer.Checked) oPlayer = "kompjuter";
                 else oPlayer = userInput1.oName.Text;
                 this.Hide();
-                var q4 = new MainForm4x4x4(xPlayer, oPlayer);
+                var q4 = new MainForm4x4x4(xPlayer, oPlayer, 4);
                 q4.Show();
                 q4.FormClosed += (s, args) => this.Show();
             }

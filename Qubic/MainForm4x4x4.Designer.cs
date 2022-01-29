@@ -47,10 +47,7 @@ namespace Qubic
             this.LabelMove = new System.Windows.Forms.Label();
             this.hintButton = new System.Windows.Forms.Button();
             this.nbMoveLabel = new System.Windows.Forms.Label();
-            this.level4Form1 = new Qubic.level4Form();
-            this.level4Form2 = new Qubic.level4Form();
-            this.level4Form3 = new Qubic.level4Form();
-            this.level4Form4 = new Qubic.level4Form();
+            this.table41 = new Qubic.table4();
             this.newMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,13 +85,13 @@ namespace Qubic
             // predajaXIgračaToolStripMenuItem
             // 
             this.predajaXIgračaToolStripMenuItem.Name = "predajaXIgračaToolStripMenuItem";
-            this.predajaXIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.predajaXIgračaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.predajaXIgračaToolStripMenuItem.Text = "Predaja X igrača";
             // 
             // predajaOIgračaToolStripMenuItem
             // 
             this.predajaOIgračaToolStripMenuItem.Name = "predajaOIgračaToolStripMenuItem";
-            this.predajaOIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.predajaOIgračaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.predajaOIgračaToolStripMenuItem.Text = "Predaja O igrača";
             // 
             // resultsMenu
@@ -117,14 +114,14 @@ namespace Qubic
             // xStatMenu
             // 
             this.xStatMenu.Name = "xStatMenu";
-            this.xStatMenu.Size = new System.Drawing.Size(224, 26);
+            this.xStatMenu.Size = new System.Drawing.Size(168, 22);
             this.xStatMenu.Text = "Statistika X igrača";
             this.xStatMenu.Click += new System.EventHandler(this.xStatMenu_Click);
             // 
             // oStatMenu
             // 
             this.oStatMenu.Name = "oStatMenu";
-            this.oStatMenu.Size = new System.Drawing.Size(224, 26);
+            this.oStatMenu.Size = new System.Drawing.Size(168, 22);
             this.oStatMenu.Text = "Statistika O igrača";
             this.oStatMenu.Click += new System.EventHandler(this.oStatMenu_Click);
             // 
@@ -192,7 +189,7 @@ namespace Qubic
             this.hintButton.BackColor = System.Drawing.Color.RosyBrown;
             this.hintButton.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hintButton.Location = new System.Drawing.Point(366, 444);
-            this.hintButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hintButton.Margin = new System.Windows.Forms.Padding(2);
             this.hintButton.Name = "hintButton";
             this.hintButton.Size = new System.Drawing.Size(114, 45);
             this.hintButton.TabIndex = 5;
@@ -212,37 +209,15 @@ namespace Qubic
             this.nbMoveLabel.TabIndex = 6;
             this.nbMoveLabel.Text = "0";
             // 
-            // level4Form1
+            // table41
             // 
-            this.level4Form1.Location = new System.Drawing.Point(124, 35);
-            this.level4Form1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.level4Form1.Name = "level4Form1";
-            this.level4Form1.Size = new System.Drawing.Size(156, 172);
-            this.level4Form1.TabIndex = 7;
-            // 
-            // level4Form2
-            // 
-            this.level4Form2.Location = new System.Drawing.Point(84, 212);
-            this.level4Form2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.level4Form2.Name = "level4Form2";
-            this.level4Form2.Size = new System.Drawing.Size(152, 168);
-            this.level4Form2.TabIndex = 8;
-            // 
-            // level4Form3
-            // 
-            this.level4Form3.Location = new System.Drawing.Point(47, 385);
-            this.level4Form3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.level4Form3.Name = "level4Form3";
-            this.level4Form3.Size = new System.Drawing.Size(152, 168);
-            this.level4Form3.TabIndex = 9;
-            // 
-            // level4Form4
-            // 
-            this.level4Form4.Location = new System.Drawing.Point(9, 558);
-            this.level4Form4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.level4Form4.Name = "level4Form4";
-            this.level4Form4.Size = new System.Drawing.Size(153, 170);
-            this.level4Form4.TabIndex = 10;
+            this.table41.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.table41.Dock = System.Windows.Forms.DockStyle.Left;
+            this.table41.Location = new System.Drawing.Point(0, 24);
+            this.table41.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.table41.Name = "table41";
+            this.table41.Size = new System.Drawing.Size(305, 692);
+            this.table41.TabIndex = 7;
             // 
             // MainForm4x4x4
             // 
@@ -250,10 +225,7 @@ namespace Qubic
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(708, 716);
-            this.Controls.Add(this.level4Form4);
-            this.Controls.Add(this.level4Form3);
-            this.Controls.Add(this.level4Form2);
-            this.Controls.Add(this.level4Form1);
+            this.Controls.Add(this.table41);
             this.Controls.Add(this.nbMoveLabel);
             this.Controls.Add(this.hintButton);
             this.Controls.Add(this.LabelMove);
@@ -262,7 +234,7 @@ namespace Qubic
             this.Controls.Add(this.xNameLabel);
             this.Controls.Add(this.newMenu);
             this.MainMenuStrip = this.newMenu;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(724, 704);
             this.Name = "MainForm4x4x4";
             this.Text = "Qubic - 4x4x4 varijanta";
@@ -289,12 +261,9 @@ namespace Qubic
         private System.Windows.Forms.Label nbMoveLabel;
         private System.Windows.Forms.ToolStripMenuItem rulesMenu;
         private System.Windows.Forms.ToolStripMenuItem novaIgraToolStripMenuItem;
-        private level4Form level4Form1;
-        private level4Form level4Form2;
-        private level4Form level4Form3;
-        private level4Form level4Form4;
         private System.Windows.Forms.ToolStripMenuItem statMenu;
         private System.Windows.Forms.ToolStripMenuItem xStatMenu;
         private System.Windows.Forms.ToolStripMenuItem oStatMenu;
+        private table4 table41;
     }
 }

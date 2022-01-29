@@ -119,6 +119,15 @@
     <Compile Include="StatForm.Designer.cs">
       <DependentUpon>StatForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="table.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="table4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="table4.designer.cs">
+      <DependentUpon>table4.cs</DependentUpon>
+    </Compile>
     <Compile Include="TopResultsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StatForm.resx">
       <DependentUpon>StatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="table4.resx">
+      <DependentUpon>table4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TopResultsForm.resx">
       <DependentUpon>TopResultsForm.cs</DependentUpon>
