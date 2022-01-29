@@ -47,7 +47,7 @@ namespace Qubic
             this.LabelMove = new System.Windows.Forms.Label();
             this.hintButton = new System.Windows.Forms.Button();
             this.nbMoveLabel = new System.Windows.Forms.Label();
-            this.table41 = new Qubic.table4();
+            this.table41 = new Qubic.table4Control();
             this.newMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -264,6 +264,6 @@ namespace Qubic
         private System.Windows.Forms.ToolStripMenuItem statMenu;
         private System.Windows.Forms.ToolStripMenuItem xStatMenu;
         private System.Windows.Forms.ToolStripMenuItem oStatMenu;
-        private table4 table41;
+        private table4Control table41;
     }
 }

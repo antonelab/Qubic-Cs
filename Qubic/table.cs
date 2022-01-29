@@ -18,7 +18,7 @@ namespace Qubic
             {
                 string lName = "l4Form" + i;
                 int ii = i - 1;
-                ((level4Form)this.Controls[lName]).btnClicked += (sender, e) => 
+                ((level4Control)this.Controls[lName]).btnClicked += (sender, e) => 
                     {
                         if (btnClicked != null)
                             btnClicked(sender, new Qubic.Move(ii, e.Item1, e.Item2));
@@ -30,7 +30,25 @@ namespace Qubic
         {
             string lName = "l4Form" + (tuple.Item1 + 1);
             string bName = "b" + tuple.Item2 + tuple.Item3;
-            ((Button)((level4Form)this.Controls[lName])[bName]).BackColor = color;
+            if(color != default(Color))
+                ((Button)((level4Control)this.Controls[lName])[bName]).BackColor = color;
+            else
+                ((Button)((level4Control)this.Controls[lName])[bName]).UseVisualStyleBackColor = true;
+        }
+
+        public void clickButton (Tuple<int, int, int> tuple)
+        {
+            string lName = "l4Form" + (tuple.Item1 + 1);
+            string bName = "b" + tuple.Item2 + tuple.Item3;
+            Button btn = (Button)((level4Control)this.Controls[lName])[bName];
+            if (btn.InvokeRequired)
+            {
+                Action safeWrite = delegate { clickButton(tuple); };
+                btn.Invoke(safeWrite);
+            }
+            else
+                btn.PerformClick();
+            
         }
     }
 }

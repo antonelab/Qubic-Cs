@@ -39,10 +39,6 @@ namespace Qubic
 
             FormClosing += (sender, e) => { gameThread.Interrupt(); gameThread.Join(); };
             table41.btnClicked += handleBtnClicked;
-            /*level4Form1.btnClicked += (sender, e) => { hintButton.Enabled = false; raiseBtnClicked(sender, e, 0); };
-            level4Form2.btnClicked += (sender, e) => raiseBtnClicked(sender, e, 1);
-            level4Form3.btnClicked += (sender, e) => raiseBtnClicked(sender, e, 2);
-            level4Form4.btnClicked += (sender, e) => raiseBtnClicked(sender, e, 3);*/
             newHint += handleHint;
             xNameLabel.Text = "IME: " + xPlayer;
             oNameLabel.Text = "IME: " + oPlayer;
@@ -68,33 +64,50 @@ namespace Qubic
             ResumeLayout();
         }
 
-        public void raiseBtnClicked(object s, Tuple<int, int> e, int i)
-        {
-            /*if (btnClicked != null)
-                btnClicked(s, new Move(i, e.Item1, e.Item2));*/
-        }
-
 
         public void handleBtnClicked(object sender, Move m)
         {
             char id = player.id();
+            if ((id == 'X' && xPlayer.Equals("kompjuter")) || (id == 'O' && oPlayer.Equals("kompjuter")))
+                if (hint == null || !m.ToString().Equals( hint.ToString()))
+                    return;
             Button button = (Button)sender;
             button.Enabled = false;
             button.Text = "" + id;
-            if (hint != null) table41.setColor(hint.ToTuple(), SystemColors.Control);
+            if (hint != null) table41.setColor(hint.ToTuple(), default(Color));
             hint = null;
+            hintButton.Enabled = false;
             game.move = m;
-            nb_moves++;
+            nbMoveLabel.Text = (++nb_moves).ToString();
             if (id == 'X')
+            {
                 player = players.Item2;
+                xNameLabel.ForeColor = Color.Black;
+                if (type == 4)
+                    oNameLabel.ForeColor = Color.RosyBrown;
+                else
+                    oNameLabel.ForeColor = Color.DarkSeaGreen;
+            }
             else
+            {
                 player = players.Item1;
+                oNameLabel.ForeColor = Color.Black;
+                if (type == 4)
+                    xNameLabel.ForeColor = Color.RosyBrown;
+                else
+                    xNameLabel.ForeColor = Color.DarkSeaGreen;
+            }
         }
 
         public void Hint(Move m)
         {
+            char id = player.id();
             hint = m;
             newHint(this, m);
+            if ((id == 'X' && xPlayer.Equals("kompjuter")) || (id == 'O' && oPlayer.Equals("kompjuter")))
+            {
+                table41.clickButton(m.ToTuple());
+            }
         }
 
         public void rulesMenuClicked(object sender, EventArgs e)

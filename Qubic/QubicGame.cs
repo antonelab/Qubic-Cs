@@ -57,7 +57,7 @@ namespace Qubic
                 player = gui.player;
                 Hint hint = new Hint(mCube.clone(), player, gui);
                 hintThread = new Thread(new ThreadStart(hint.run));
-                //hintThread.Start();
+                hintThread.Start();
                 while (move == null)
                 {
                     try

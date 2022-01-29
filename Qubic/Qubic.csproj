@@ -128,12 +128,6 @@
     <Compile Include="table.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="table4.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="table4.designer.cs">
-      <DependentUpon>table4.cs</DependentUpon>
-    </Compile>
     <Compile Include="table3Control.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -196,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="table4Control.resx">
       <DependentUpon>table4Control.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="table4.resx">
-      <DependentUpon>table4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TopResultsForm.resx">
       <DependentUpon>TopResultsForm.cs</DependentUpon>
