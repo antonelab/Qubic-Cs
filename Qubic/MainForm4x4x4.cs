@@ -25,10 +25,6 @@ namespace Qubic
             SuspendLayout();
             db = new database();
 
-            level4Form1.btnClicked += (sender, e) => btnClicked(sender, Tuple.Create(0, e.Item1, e.Item2));
-            level4Form2.btnClicked += (sender, e) => btnClicked(sender, Tuple.Create(0, e.Item1, e.Item2));
-            level4Form3.btnClicked += (sender, e) => btnClicked(sender, Tuple.Create(0, e.Item1, e.Item2));
-            level4Form4.btnClicked += (sender, e) => btnClicked(sender, Tuple.Create(0, e.Item1, e.Item2));
             level4Form1.btnClicked += (sender, e) => { hintButton.Enabled = false; raiseBtnClicked(sender, e, 0); };
             level4Form2.btnClicked += (sender, e) => raiseBtnClicked(sender, e, 1);
             level4Form3.btnClicked += (sender, e) => raiseBtnClicked(sender, e, 2);
