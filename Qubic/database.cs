@@ -13,7 +13,43 @@ namespace Qubic
 
         public database()
         {
-            conn = new SqlConnection("Server=localhost;Integrated security=SSPI;database=Results");
+            conn = new SqlConnection();
+            conn.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;
+                                      AttachDbFilename=|DataDirectory|Qubic.mdf;
+                                      Integrated Security=True";
+        }
+
+        public List<String> xStatistic()
+        {
+            
+            var stat = new List<String>();
+            /*
+            string nbXWins = "select Player_X, count(*) from Results;";
+            SqlCommand com = new SqlCommand(selectSql, conn);
+
+            try
+            {
+                conn.Open();
+
+                using (SqlDataReader read = com.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        imena.Add(read["Player_X"].ToString());
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            */
+            return stat;
+            
         }
     }
 }

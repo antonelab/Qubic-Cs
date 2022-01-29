@@ -36,11 +36,6 @@ namespace Qubic
             this.predajaXIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.predajaOIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resultsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.najboljiXIgračiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.najboljiOIgračiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.statistikaXIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statistikaOIgračaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rulesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.xNameLabel = new System.Windows.Forms.Label();
             this.oNameLabel = new System.Windows.Forms.Label();
@@ -53,6 +48,9 @@ namespace Qubic
             this.level4Form2 = new Qubic.level4Form();
             this.level4Form3 = new Qubic.level4Form();
             this.level4Form4 = new Qubic.level4Form();
+            this.statMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.xStatMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.oStatMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,56 +87,22 @@ namespace Qubic
             // predajaXIgračaToolStripMenuItem
             // 
             this.predajaXIgračaToolStripMenuItem.Name = "predajaXIgračaToolStripMenuItem";
-            this.predajaXIgračaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.predajaXIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.predajaXIgračaToolStripMenuItem.Text = "Predaja X igrača";
             // 
             // predajaOIgračaToolStripMenuItem
             // 
             this.predajaOIgračaToolStripMenuItem.Name = "predajaOIgračaToolStripMenuItem";
-            this.predajaOIgračaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.predajaOIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.predajaOIgračaToolStripMenuItem.Text = "Predaja O igrača";
             // 
             // resultsMenu
             // 
-            this.resultsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.najboljiXIgračiToolStripMenuItem,
-            this.najboljiOIgračiToolStripMenuItem});
             this.resultsMenu.Name = "resultsMenu";
             this.resultsMenu.Size = new System.Drawing.Size(134, 24);
             this.resultsMenu.Text = "Najbolji rezultati";
-            // 
-            // najboljiXIgračiToolStripMenuItem
-            // 
-            this.najboljiXIgračiToolStripMenuItem.Name = "najboljiXIgračiToolStripMenuItem";
-            this.najboljiXIgračiToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
-            this.najboljiXIgračiToolStripMenuItem.Text = "Najbolji X igrači";
-            // 
-            // najboljiOIgračiToolStripMenuItem
-            // 
-            this.najboljiOIgračiToolStripMenuItem.Name = "najboljiOIgračiToolStripMenuItem";
-            this.najboljiOIgračiToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
-            this.najboljiOIgračiToolStripMenuItem.Text = "Najbolji O igrači";
-            // 
-            // statMenu
-            // 
-            this.statMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statistikaXIgračaToolStripMenuItem,
-            this.statistikaOIgračaToolStripMenuItem});
-            this.statMenu.Name = "statMenu";
-            this.statMenu.Size = new System.Drawing.Size(83, 24);
-            this.statMenu.Text = "Statistika";
-            // 
-            // statistikaXIgračaToolStripMenuItem
-            // 
-            this.statistikaXIgračaToolStripMenuItem.Name = "statistikaXIgračaToolStripMenuItem";
-            this.statistikaXIgračaToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.statistikaXIgračaToolStripMenuItem.Text = "Statistika X igrača";
-            // 
-            // statistikaOIgračaToolStripMenuItem
-            // 
-            this.statistikaOIgračaToolStripMenuItem.Name = "statistikaOIgračaToolStripMenuItem";
-            this.statistikaOIgračaToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.statistikaOIgračaToolStripMenuItem.Text = "Statistika O igrača";
+            this.resultsMenu.Click += new System.EventHandler(this.resultsMenu_Click);
+            this.resultsMenu.DoubleClick += new System.EventHandler(this.resultsMenu_Click);
             // 
             // rulesMenu
             // 
@@ -249,6 +213,28 @@ namespace Qubic
             this.level4Form4.Size = new System.Drawing.Size(204, 209);
             this.level4Form4.TabIndex = 10;
             // 
+            // statMenu
+            // 
+            this.statMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xStatMenu,
+            this.oStatMenu});
+            this.statMenu.Name = "statMenu";
+            this.statMenu.Size = new System.Drawing.Size(83, 24);
+            this.statMenu.Text = "Statistika";
+            // 
+            // xStatMenu
+            // 
+            this.xStatMenu.Name = "xStatMenu";
+            this.xStatMenu.Size = new System.Drawing.Size(224, 26);
+            this.xStatMenu.Text = "Statistika X igrača";
+            this.xStatMenu.Click += new System.EventHandler(this.xStatMenu_Click);
+            // 
+            // oStatMenu
+            // 
+            this.oStatMenu.Name = "oStatMenu";
+            this.oStatMenu.Size = new System.Drawing.Size(224, 26);
+            this.oStatMenu.Text = "Statistika O igrača";
+            // 
             // MainForm4x4x4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -284,11 +270,6 @@ namespace Qubic
         private System.Windows.Forms.ToolStripMenuItem predajaXIgračaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem predajaOIgračaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resultsMenu;
-        private System.Windows.Forms.ToolStripMenuItem najboljiXIgračiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem najboljiOIgračiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem statMenu;
-        private System.Windows.Forms.ToolStripMenuItem statistikaXIgračaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem statistikaOIgračaToolStripMenuItem;
         private System.Windows.Forms.Label xNameLabel;
         private System.Windows.Forms.Label oNameLabel;
         private System.Windows.Forms.Label label1;
@@ -302,5 +283,8 @@ namespace Qubic
         private level4Form level4Form2;
         private level4Form level4Form3;
         private level4Form level4Form4;
+        private System.Windows.Forms.ToolStripMenuItem statMenu;
+        private System.Windows.Forms.ToolStripMenuItem xStatMenu;
+        private System.Windows.Forms.ToolStripMenuItem oStatMenu;
     }
 }
