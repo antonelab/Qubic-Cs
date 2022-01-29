@@ -35,8 +35,8 @@ namespace Qubic
 
         ~Gui()
         {
-            gameThread.Interrupt();
-            gameThread.Join();
+            //gameThread.Interrupt();
+            //gameThread.Join();
         }
 
         public void raiseBtnClicked(object s, Tuple<int,int> e, int i)
@@ -48,9 +48,9 @@ namespace Qubic
 
         public void handleBtnClicked(object sender, Move m)
         {
+            char id = player.id();
             Button button = (Button)sender;
             button.Enabled = false;
-            char id = player.id();
             button.Text = "" + id;
             if(hint != null) setColor(hint.ToTuple(), SystemColors.Control);
             hint = null;

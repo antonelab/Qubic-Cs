@@ -24,7 +24,7 @@ namespace Qubic
             }
             catch(ThreadInterruptedException ex)
             {
-                Thread.CurrentThread.Interrupt();
+                
             }
         }
     

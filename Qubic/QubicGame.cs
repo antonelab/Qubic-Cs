@@ -57,7 +57,7 @@ namespace Qubic
                 player = gui.player;
                 Hint hint = new Hint(mCube.clone(), player, gui);
                 hintThread = new Thread(new ThreadStart(hint.run));
-                hintThread.Start();
+                //hintThread.Start();
                 while (move == null)
                 {
                     try
@@ -66,11 +66,12 @@ namespace Qubic
                     }
                     catch (ThreadInterruptedException ex)
                     {
-                        hintThread.Interrupt();
-                        Thread.CurrentThread.Interrupt();
+                        hintThread.Abort();
+                        Console.WriteLine("Hint ugasen");
+                        return;
                     }
                 }
-                hintThread.Interrupt();
+                hintThread.Abort();
                 //mPlayers[playerOnMove].play(mCube, move);
                 mCube.play(move, player.id());
                 move = null;

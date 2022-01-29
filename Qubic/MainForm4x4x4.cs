@@ -25,6 +25,7 @@ namespace Qubic
             SuspendLayout();
             db = new database();
 
+            FormClosing += (sender, e) => { gameThread.Interrupt(); gameThread.Join(); };
             level4Form1.btnClicked += (sender, e) => { hintButton.Enabled = false; raiseBtnClicked(sender, e, 0); };
             level4Form2.btnClicked += (sender, e) => raiseBtnClicked(sender, e, 1);
             level4Form3.btnClicked += (sender, e) => raiseBtnClicked(sender, e, 2);
