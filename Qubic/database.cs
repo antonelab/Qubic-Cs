@@ -16,7 +16,7 @@ namespace Qubic
         {
             conn = new SqlConnection();
             conn.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;
-                                      AttachDbFilename=|DataDirectory|Qubic.mdf;
+                                      AttachDbFilename=|DataDirectory|Qubic_db.mdf;
                                       Integrated Security=True";
         }
         public void insert(string pX, string pO, string type, int res, int nbMoves)
