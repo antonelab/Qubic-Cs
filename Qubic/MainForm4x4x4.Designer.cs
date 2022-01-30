@@ -229,6 +229,7 @@ namespace Qubic
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(608, 761);
+            this.Controls.Add(this.tableControl);
             this.Controls.Add(this.nbMoveLabel);
             this.Controls.Add(this.hintButton);
             this.Controls.Add(this.LabelMove);
@@ -236,7 +237,6 @@ namespace Qubic
             this.Controls.Add(this.oNameLabel);
             this.Controls.Add(this.xNameLabel);
             this.Controls.Add(this.newMenu);
-            this.Controls.Add(this.tableControl);
             this.MainMenuStrip = this.newMenu;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;

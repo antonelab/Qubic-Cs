@@ -36,24 +36,24 @@ namespace Qubic
             // 
             // lControl3
             // 
-            this.lControl3.Location = new System.Drawing.Point(2, 299);
-            this.lControl3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lControl3.Location = new System.Drawing.Point(2, 307);
+            this.lControl3.Margin = new System.Windows.Forms.Padding(2);
             this.lControl3.Name = "lControl3";
             this.lControl3.Size = new System.Drawing.Size(139, 144);
             this.lControl3.TabIndex = 0;
             // 
             // lControl2
             // 
-            this.lControl2.Location = new System.Drawing.Point(44, 150);
-            this.lControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lControl2.Location = new System.Drawing.Point(43, 159);
+            this.lControl2.Margin = new System.Windows.Forms.Padding(2);
             this.lControl2.Name = "lControl2";
             this.lControl2.Size = new System.Drawing.Size(142, 144);
             this.lControl2.TabIndex = 1;
             // 
             // lControl1
             // 
-            this.lControl1.Location = new System.Drawing.Point(86, 2);
-            this.lControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lControl1.Location = new System.Drawing.Point(86, 14);
+            this.lControl1.Margin = new System.Windows.Forms.Padding(2);
             this.lControl1.Name = "lControl1";
             this.lControl1.Size = new System.Drawing.Size(172, 152);
             this.lControl1.TabIndex = 2;

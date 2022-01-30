@@ -42,7 +42,15 @@ namespace Qubic
             {
                 this.Controls.Remove(this.tableControl);
                 this.tableControl = new Qubic.table3Control();
+                this.tableControl.Dock = System.Windows.Forms.DockStyle.Left;
+                this.tableControl.Location = new System.Drawing.Point(0, 24);
+                this.tableControl.Margin = new System.Windows.Forms.Padding(2);
+                this.tableControl.Name = "tableControl";
+                this.tableControl.Size = new System.Drawing.Size(319, 737);
+                this.tableControl.TabIndex = 7;
                 this.Controls.Add(this.tableControl);
+                this.Controls.Remove(this.newMenu);
+                this.Controls.Add(this.newMenu);
                 this.Text = "Qubic - 3x3x3 varijanta";
                 this.BackColor = Color.RosyBrown;
                 tableControl.BackColor = Color.RosyBrown;
