@@ -78,6 +78,12 @@
     <Compile Include="IntroForm.Designer.cs">
       <DependentUpon>IntroForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="lastForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lastForm.Designer.cs">
+      <DependentUpon>lastForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="level3Control.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IntroForm.resx">
       <DependentUpon>IntroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lastForm.resx">
+      <DependentUpon>lastForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="level3Control.resx">
       <DependentUpon>level3Control.cs</DependentUpon>

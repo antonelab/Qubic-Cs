@@ -52,7 +52,13 @@ namespace Qubic
                 this.Hide();
                 var q4 = new MainForm4x4x4(xPlayer, oPlayer, 4);
                 q4.Show();
-                q4.FormClosed += (s, args) => this.Show();
+                q4.closed += (s, e_b) =>
+                {
+                    if (e_b)
+                    {
+                        this.Show();
+                    }     
+                }; 
             }
             else
             {

@@ -63,7 +63,7 @@ namespace Qubic
             this.newMenu.Location = new System.Drawing.Point(0, 0);
             this.newMenu.Name = "newMenu";
             this.newMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.newMenu.Size = new System.Drawing.Size(1000, 28);
+            this.newMenu.Size = new System.Drawing.Size(810, 28);
             this.newMenu.TabIndex = 0;
             this.newMenu.Text = "menuStrip1";
             // 
@@ -72,6 +72,7 @@ namespace Qubic
             this.novaIgraToolStripMenuItem.Name = "novaIgraToolStripMenuItem";
             this.novaIgraToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.novaIgraToolStripMenuItem.Text = "Nova igra";
+            this.novaIgraToolStripMenuItem.Click += new System.EventHandler(this.novaIgraToolStripMenuItem_Click);
             // 
             // closeMenu
             // 
@@ -85,14 +86,16 @@ namespace Qubic
             // predajaXIgračaToolStripMenuItem
             // 
             this.predajaXIgračaToolStripMenuItem.Name = "predajaXIgračaToolStripMenuItem";
-            this.predajaXIgračaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.predajaXIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.predajaXIgračaToolStripMenuItem.Text = "Predaja X igrača";
+            this.predajaXIgračaToolStripMenuItem.Click += new System.EventHandler(this.predajaXIgračaToolStripMenuItem_Click);
             // 
             // predajaOIgračaToolStripMenuItem
             // 
             this.predajaOIgračaToolStripMenuItem.Name = "predajaOIgračaToolStripMenuItem";
-            this.predajaOIgračaToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.predajaOIgračaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.predajaOIgračaToolStripMenuItem.Text = "Predaja O igrača";
+            this.predajaOIgračaToolStripMenuItem.Click += new System.EventHandler(this.predajaOIgračaToolStripMenuItem_Click);
             // 
             // resultsMenu
             // 
@@ -174,7 +177,7 @@ namespace Qubic
             // 
             this.LabelMove.AutoSize = true;
             this.LabelMove.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelMove.Location = new System.Drawing.Point(483, 846);
+            this.LabelMove.Location = new System.Drawing.Point(482, 456);
             this.LabelMove.Name = "LabelMove";
             this.LabelMove.Size = new System.Drawing.Size(138, 36);
             this.LabelMove.TabIndex = 4;
@@ -184,7 +187,7 @@ namespace Qubic
             // 
             this.hintButton.BackColor = System.Drawing.Color.RosyBrown;
             this.hintButton.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hintButton.Location = new System.Drawing.Point(488, 546);
+            this.hintButton.Location = new System.Drawing.Point(488, 611);
             this.hintButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hintButton.Name = "hintButton";
             this.hintButton.Size = new System.Drawing.Size(152, 55);
@@ -198,7 +201,7 @@ namespace Qubic
             this.nbMoveLabel.AutoSize = true;
             this.nbMoveLabel.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nbMoveLabel.ForeColor = System.Drawing.Color.Black;
-            this.nbMoveLabel.Location = new System.Drawing.Point(627, 846);
+            this.nbMoveLabel.Location = new System.Drawing.Point(626, 456);
             this.nbMoveLabel.Name = "nbMoveLabel";
             this.nbMoveLabel.Size = new System.Drawing.Size(29, 36);
             this.nbMoveLabel.TabIndex = 6;
@@ -208,10 +211,10 @@ namespace Qubic
             // 
             this.table41.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.table41.Dock = System.Windows.Forms.DockStyle.Left;
-            this.table41.Location = new System.Drawing.Point(0, 24);
-            this.table41.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.table41.Location = new System.Drawing.Point(0, 28);
+            this.table41.Margin = new System.Windows.Forms.Padding(2);
             this.table41.Name = "table41";
-            this.table41.Size = new System.Drawing.Size(305, 692);
+            this.table41.Size = new System.Drawing.Size(305, 905);
             this.table41.TabIndex = 7;
             // 
             // MainForm4x4x4
@@ -219,7 +222,7 @@ namespace Qubic
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(708, 716);
+            this.ClientSize = new System.Drawing.Size(810, 933);
             this.Controls.Add(this.table41);
             this.Controls.Add(this.nbMoveLabel);
             this.Controls.Add(this.hintButton);
@@ -234,6 +237,7 @@ namespace Qubic
             this.Name = "MainForm4x4x4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Qubic - 4x4x4 varijanta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm4x4x4_FormClosing);
             this.newMenu.ResumeLayout(false);
             this.newMenu.PerformLayout();
             this.ResumeLayout(false);

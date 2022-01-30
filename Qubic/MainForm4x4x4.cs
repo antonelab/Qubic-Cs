@@ -26,6 +26,7 @@ namespace Qubic
         static public Thread gameThread;
 
         public event EventHandler<Move> newHint;
+        public event EventHandler<bool> closed;
 
 
         public MainForm4x4x4(string xPlayer, string oPlayer, int type)
@@ -51,7 +52,7 @@ namespace Qubic
             gameThread = new Thread(new ThreadStart(game.play));
             gameThread.Start();
             player = players.Item1;
-            game.winner += (sender, e) => MessageBox.Show(e.id().ToString());
+            game.winner += handleWinner;
 
             //za kompjuter moramo zablokirat statistiku i predaju
             if (xPlayer.Equals("kompjuter"))
@@ -67,7 +68,33 @@ namespace Qubic
             ResumeLayout();
         }
 
+        public void handleWinner(object sender, Tuple<Player,int> e)
+        {
+            //MessageBox.Show(e.id().ToString());
+            lastForm last = new lastForm(e.Item1.name, e.Item2);
+            if (this.InvokeRequired)
+            {
+                Action handle = delegate { handleWinner(sender, e); };
+                this.Invoke(handle);
+                return;
+            }
+            // Show testDialog as a modal dialog and determine if DialogResult = OK.
+            if (last.ShowDialog(this) == DialogResult.OK)
+            {
+                //tu se ugasi igra
+                MessageBox.Show("Gasim i spremam");
 
+                /*
+                db.insert(...)
+                 */
+            }
+            else
+            {
+                //tu se ugasi igra i mozda ne sprema
+                MessageBox.Show("Gasim ne spremam");
+            }
+            last.Dispose();
+        }
         public void handleBtnClicked(object sender, Move m)
         {
             char id = player.id();
@@ -123,8 +150,8 @@ namespace Qubic
         {
             if (hintButton.InvokeRequired)
             {
-                Action safeWrite = delegate { handleHint(sender, e); };
-                hintButton.Invoke(safeWrite);
+                Action handle = delegate { handleHint(sender, e); };
+                hintButton.Invoke(handle);
             }
             else
                 hintButton.Enabled = true;
@@ -145,6 +172,41 @@ namespace Qubic
         {
             var p = new TopResultsForm();
             p.Show();
+        }
+
+        private void MainForm4x4x4_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //korisnik gasi
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                if (MessageBox.Show(this,
+                         "Jeste li sigurni da želite izaći\n iz igre bez spremanja rezultata?",
+                         "Oprez - izlazak",
+                         MessageBoxButtons.OKCancel,
+                         MessageBoxIcon.Question) == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    if (closed != null) closed(this, true);
+                }
+            }            
+        }
+
+        private void novaIgraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                this.Close();
+        }
+
+        private void predajaXIgračaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            db.insert(xPlayer, oPlayer, "4x4x4", 1, nb_moves);
+        }
+
+        private void predajaOIgračaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            db.insert(xPlayer, oPlayer, "4x4x4", 0, nb_moves);
         }
 
         private void oStatMenu_Click(object sender, EventArgs e)

@@ -18,7 +18,33 @@ namespace Qubic
                                       AttachDbFilename=|DataDirectory|Qubic.mdf;
                                       Integrated Security=True";
         }
+        public void insert(string pX, string pO, string type, int res, int nbMoves)
+        {
+            string c = @"INSERT INTO Results "
+                        + "(Player_X, Player_O, Result, Moves, Type, Date) "
+                        + "VALUES "
+                        + "(" + pX + ", " + pO + ", " + res.ToString() 
+                        + ", " + nbMoves.ToString() + ", " + type
+                        + ", " + DateTime.Today.ToString() + ");";
+            //Console.WriteLine(nbWins);
 
+            SqlCommand com = new SqlCommand(c, conn);
+
+            try
+            {
+                conn.Open();
+                com.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
         public String playerResultCount(string p, string label, int res, string type)
         {
             string nbWins;
@@ -211,7 +237,6 @@ namespace Qubic
             }
             if (list.Equals("")) list = "-";
             return list;
-
         }
     }
 }
