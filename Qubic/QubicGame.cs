@@ -71,7 +71,7 @@ namespace Qubic
                     }
                 }
                 hintThread.Interrupt();
-                hintThread.Join();
+                //hintThread.Join();
                 //mPlayers[playerOnMove].play(mCube, move);
                 mCube.play(move, player.id());
                 move = null;

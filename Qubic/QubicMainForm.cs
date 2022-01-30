@@ -100,22 +100,10 @@ namespace Qubic
                 this.Invoke(handle);
                 return;
             }
-            /*
-            // Show testDialog as a modal dialog and determine if DialogResult = OK.
-            if (last.ShowDialog(this) == DialogResult.OK)
-            {
-                //tu se ugasi igra
-                MessageBox.Show("Gasim i spremam");
-            }
-            else
-            {
-                //tu se ugasi igra i mozda ne sprema
-                MessageBox.Show("Gasim ne spremam");
-            }
-            last.Dispose();
-            */
+            
             last.Show();
-            db.insert(xPlayer, oPlayer, "4x4x4", e, nb_moves);
+            if(type == 4)   db.insert(xPlayer, oPlayer, "4x4x4", e, nb_moves);
+            else db.insert(xPlayer, oPlayer, "3x3x3", e, nb_moves);
             flagSaved = true;
             last.closedLast += (s, e_bool) =>
             {

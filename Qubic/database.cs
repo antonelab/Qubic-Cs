@@ -27,7 +27,7 @@ namespace Qubic
                         + "(Player_X, Player_O, Result, Moves, Type, Date) "
                         + "VALUES "
                         + "(@pX, @pO, @res, @moves, @type, "
-                        + "CONVERT(DATETIME,'" + DateTime.Today.ToString() + "'));";
+                        + "CONVERT(DATETIME,'" + DateTime.Now.ToString() + "'));";
 
             SqlParameter resParam = new SqlParameter("@res", SqlDbType.Int, 0);
             SqlParameter movesParam = new SqlParameter("@moves", SqlDbType.Int, 0);

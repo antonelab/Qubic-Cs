@@ -17,7 +17,7 @@ namespace Qubic
         {
             InitializeComponent();
             if (result == -1)
-                nameWinner.Text = "Igra je završila nerješeno!";
+                nameWinner.Text = "Igra je završila neriješeno!";
             else
                 nameWinner.Text += player;
         }
