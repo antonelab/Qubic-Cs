@@ -67,7 +67,6 @@ namespace Qubic
                     catch (ThreadInterruptedException ex)
                     {
                         hintThread.Abort();
-                        Console.WriteLine("Hint ugasen");
                         return;
                     }
                 }
@@ -76,7 +75,7 @@ namespace Qubic
                 //mPlayers[playerOnMove].play(mCube, move);
                 mCube.play(move, player.id());
                 move = null;
-                mCube.print();
+                //mCube.print();
                 playerOnMove++;
                 result = mCube.result();
             }

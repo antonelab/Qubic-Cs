@@ -214,8 +214,6 @@ namespace Qubic
             // 
             // tableControl
             // 
-            //Ako designer ne radi treba maknut komentar s 50.te linije
-            //ali onda igra 3x3x3 ne radi
             this.tableControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableControl.Location = new System.Drawing.Point(0, 24);
             this.tableControl.Margin = new System.Windows.Forms.Padding(2);

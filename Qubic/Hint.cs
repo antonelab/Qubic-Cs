@@ -19,7 +19,7 @@ namespace Qubic
             try
             {
                 Thread.Sleep(10);
-                Console.WriteLine("Hint: " + hint);
+                //Console.WriteLine("Hint: " + hint);
                 gui.Hint(hint);
             }
             catch(ThreadInterruptedException ex)

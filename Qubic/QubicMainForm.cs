@@ -11,6 +11,7 @@ using System.Threading;
 
 namespace Qubic
 {
+    //U designeru se prikazuje verzija 4x4x4
     public partial class QubicMainForm : Form
     {
         private database db;
