@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -20,19 +21,36 @@ namespace Qubic
         }
         public void insert(string pX, string pO, string type, int res, int nbMoves)
         {
-            string c = @"INSERT INTO Results "
+            SqlCommand com = new SqlCommand(null, conn);
+
+            com.CommandText = @"INSERT INTO Results"
                         + "(Player_X, Player_O, Result, Moves, Type, Date) "
                         + "VALUES "
-                        + "(" + pX + ", " + pO + ", " + res.ToString() 
-                        + ", " + nbMoves.ToString() + ", " + type
-                        + ", " + DateTime.Today.ToString() + ");";
-            //Console.WriteLine(nbWins);
+                        + "(@pX, @pO, @res, @moves, @type, "
+                        + "CONVERT(DATETIME,'" + DateTime.Today.ToString() + "'));";
 
-            SqlCommand com = new SqlCommand(c, conn);
+            SqlParameter resParam = new SqlParameter("@res", SqlDbType.Int, 0);
+            SqlParameter movesParam = new SqlParameter("@moves", SqlDbType.Int, 0);
+            resParam.Value = res;
+            movesParam.Value = nbMoves;
+            SqlParameter xParam = new SqlParameter("@pX", SqlDbType.NVarChar, -1);
+            xParam.Value = pX;
+            SqlParameter oParam = new SqlParameter("@pO", SqlDbType.NVarChar, -1);
+            oParam.Value = pO;
+            SqlParameter tParam = new SqlParameter("@type", SqlDbType.NVarChar, -1);
+            tParam.Value = type;
+
+            com.Parameters.Add(resParam);
+            com.Parameters.Add(movesParam);
+            com.Parameters.Add(xParam);
+            com.Parameters.Add(oParam);
+            com.Parameters.Add(tParam);
+
 
             try
             {
                 conn.Open();
+                com.Prepare();
                 com.ExecuteNonQuery();
             }
             catch (Exception e)
@@ -47,21 +65,32 @@ namespace Qubic
         }
         public String playerResultCount(string p, string label, int res, string type)
         {
-            string nbWins;
+            SqlCommand com = new SqlCommand(null, conn);
+            
             string nb = "";
 
-            nbWins = @"SELECT COUNT(*) AS nb "
+            com.CommandText = @"SELECT COUNT(*) AS nb "
                     + "FROM Results "
-                    + "WHERE Result = " + res.ToString()
-                    + " AND Type = \'" + type 
-                    + "\' AND Player_" + label + " =\'" + p + "\'; ";
+                    + "WHERE Result = @res" 
+                    + " AND Type = @type" 
+                    + " AND Player_" + label + " = @name; ";
             //Console.WriteLine(nbWins);
             
-            SqlCommand com = new SqlCommand(nbWins, conn);
+            SqlParameter resParam = new SqlParameter("@res", SqlDbType.Int, 0);
+            resParam.Value = res;
+            
+            SqlParameter nParam = new SqlParameter("@name", SqlDbType.NVarChar, -1);
+            nParam.Value = p;
+            SqlParameter tParam = new SqlParameter("@type", SqlDbType.NVarChar, -1);
+            tParam.Value = type;
 
+            com.Parameters.Add(resParam);
+            com.Parameters.Add(nParam);
+            com.Parameters.Add(tParam);
             try
             {
                 conn.Open();
+                com.Prepare();
 
                 using (SqlDataReader read = com.ExecuteReader())
                 {
@@ -86,20 +115,30 @@ namespace Qubic
 
         public String totalGames(string p, string type)
         {
-            string total;
+            SqlCommand com = new SqlCommand(null, conn);
+            
             string nb = "";
-            total = @"SELECT COUNT(*) AS nb "
-                    + "FROM Results "
-                    + " WHERE Type = \'" + type
-                    + "\' AND (Player_X =\'" + p + "\'"
-                    + " OR Player_O =\'" + p + "\'); ";
-      
-            SqlCommand com = new SqlCommand(total, conn);
+            com.CommandText = @"SELECT COUNT(*) AS nb "
+                            + "FROM Results "
+                            + " WHERE Type = @type" 
+                            + " AND (Player_X = @name"
+                            + " OR Player_O = @name); ";
+
+            
+            
+            SqlParameter nParam = new SqlParameter("@name", SqlDbType.NVarChar, -1);
+            nParam.Value = p;
+            SqlParameter tParam = new SqlParameter("@type", SqlDbType.NVarChar, -1);
+            tParam.Value = type;
+            
+            com.Parameters.Add(nParam);
+            com.Parameters.Add(tParam);
+
 
             try
             {
                 conn.Open();
-
+                com.Prepare();
                 using (SqlDataReader read = com.ExecuteReader())
                 {
                     while (read.Read())
@@ -122,20 +161,28 @@ namespace Qubic
         }
         public String movesAvg(string p, string type)
         {
-            string total;
+            SqlCommand com = new SqlCommand(null, conn);
+            
             string nb = "";
-            total = @"SELECT AVG(Moves) AS nb "
+            com.CommandText = @"SELECT AVG(Moves) AS nb "
                     + "FROM Results "
-                    + " WHERE Type = \'" + type
-                    + "\' AND (Player_X =\'" + p + "\'"
-                    + " OR Player_O =\'" + p + "\'); ";
+                    + " WHERE Type = @type" 
+                    + " AND (Player_X = @name"
+                    + " OR Player_O = @name); ";
 
-            SqlCommand com = new SqlCommand(total, conn);
+            
+            SqlParameter nParam = new SqlParameter("@name", SqlDbType.NVarChar, -1);
+            nParam.Value = p;
+            SqlParameter tParam = new SqlParameter("@type", SqlDbType.NVarChar, -1);
+            tParam.Value = type;
 
+            
+            com.Parameters.Add(nParam);
+            com.Parameters.Add(tParam);
             try
             {
                 conn.Open();
-
+                com.Prepare();
                 using (SqlDataReader read = com.ExecuteReader())
                 {
                     while (read.Read())
@@ -159,21 +206,28 @@ namespace Qubic
 
         public String lastPlayed(string p, string type)
         {
-            string l;
+            SqlCommand com = new SqlCommand(null, conn);
+            
             string nb = "";
-            l = @"SELECT Date AS d "
+            com.CommandText = @"SELECT Date AS d "
                     + "FROM Results "
-                    + " WHERE Type = \'" + type
-                    + "\' AND (Player_X =\'" + p + "\'"
-                    + " OR Player_O =\'" + p + "\')"
+                    + " WHERE Type = @type" 
+                    + " AND (Player_X = @name"
+                    + " OR Player_O = @name)"
                     + " ORDER BY Date DESC; ";
 
-            SqlCommand com = new SqlCommand(l, conn);
+            
+            SqlParameter nParam = new SqlParameter("@name", SqlDbType.NVarChar, -1);
+            nParam.Value = p;
+            SqlParameter tParam = new SqlParameter("@type", SqlDbType.NVarChar, -1);
+            tParam.Value = type;
 
+            com.Parameters.Add(nParam);
+            com.Parameters.Add(tParam);
             try
             {
                 conn.Open();
-
+                com.Prepare();
                 using (SqlDataReader read = com.ExecuteReader())
                 {
                     while (read.Read())
@@ -197,22 +251,26 @@ namespace Qubic
         }
         public String topPlayers(string label, string type)
         {
-            string l="";
+            SqlCommand com = new SqlCommand(null, conn);
+            
             string list = "";
-            l = @"SELECT TOP 10 Player_" + label + " AS name, "
+            com.CommandText = @"SELECT TOP 10 Player_" + label + " AS name, "
                 + "SUM(CASE WHEN Result = -1 THEN 0.5 ELSE 1 END) AS b "
                 + "FROM Results "
-                + "WHERE Type = \'" + type + "\' "
+                + "WHERE Type = @type "
                 + "AND (Result = 1 OR Result = -1) "
                 + "GROUP BY Player_" + label + " ORDER BY b DESC;"; 
 
-            //Console.WriteLine(l);
-            SqlCommand com = new SqlCommand(l, conn);
+            
+            SqlParameter tParam = new SqlParameter("@type", SqlDbType.NVarChar, -1);
+            tParam.Value = type;
 
+            
+            com.Parameters.Add(tParam);
             try
             {
                 conn.Open();
-
+                com.Prepare();
                 using (SqlDataReader read = com.ExecuteReader())
                 {
                     int counter = 1;

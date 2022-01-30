@@ -17,7 +17,7 @@ namespace Qubic
         //polje od dva igrača
         public Player player;
 
-        public event EventHandler<Tuple<Player, int>> winner;
+        public event EventHandler<int> winner;
 
         //stvara uvijete za početak igre
         public QubicGame(int gameType, MainForm4x4x4 app)
@@ -81,12 +81,12 @@ namespace Qubic
                 result = mCube.result();
             }
             if (result == 500)
-                winner(this, new Tuple<Player,int>( gui.players.Item1, 1));
+                winner(this, 1);
 
             else if (result == -500)
-                winner(this, new Tuple<Player, int>(gui.players.Item2, 1));
+                winner(this, 0);
             else
-                winner(this, new Tuple<Player, int>(gui.players.Item2, 0));
+                winner(this, -1);
         }
     }
 }
