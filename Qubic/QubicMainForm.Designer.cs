@@ -1,7 +1,7 @@
 ﻿
 namespace Qubic
 {
-    partial class MainForm4x4x4
+    partial class QubicMainForm
     {
         /// <summary>
         /// Required designer variable.

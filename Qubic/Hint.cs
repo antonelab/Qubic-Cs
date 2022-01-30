@@ -6,9 +6,9 @@ namespace Qubic
     public class Hint{
         private Cube cube;
         private Player player;
-        private MainForm4x4x4 gui;
+        private QubicMainForm gui;
     
-        public Hint(Cube cube, Player player, MainForm4x4x4 gui){
+        public Hint(Cube cube, Player player, QubicMainForm gui){
             this.cube = cube;
             this.player = player;
             this.gui = gui;

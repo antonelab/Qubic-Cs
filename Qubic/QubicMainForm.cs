@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace Qubic
 {
-    public partial class MainForm4x4x4 : Form
+    public partial class QubicMainForm : Form
     {
         private database db;
         private String xPlayer, oPlayer;
@@ -30,7 +30,7 @@ namespace Qubic
         public event EventHandler<bool> closed;
 
 
-        public MainForm4x4x4(string xPlayer, string oPlayer, int type)
+        public QubicMainForm(string xPlayer, string oPlayer, int type)
         {
             SuspendLayout();
             this.xPlayer = xPlayer;

@@ -67,9 +67,6 @@
     <Compile Include="Cube3.cs" />
     <Compile Include="Cube4.cs" />
     <Compile Include="database.cs" />
-    <Compile Include="Gui.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Hint.cs" />
     <Compile Include="Integer.cs" />
     <Compile Include="IntroForm.cs">
@@ -90,18 +87,6 @@
     <Compile Include="level3Control.Designer.cs">
       <DependentUpon>level3Control.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm3x3x3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm3x3x3.Designer.cs">
-      <DependentUpon>MainForm3x3x3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm4x4x4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm4x4x4.Designer.cs">
-      <DependentUpon>MainForm4x4x4.cs</DependentUpon>
-    </Compile>
     <Compile Include="level4Control.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,6 +104,12 @@
       <DependentUpon>QubicDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="QubicGame.cs" />
+    <Compile Include="QubicMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QubicMainForm.Designer.cs">
+      <DependentUpon>QubicMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RulesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,9 +149,6 @@
     <Compile Include="UserInput.Designer.cs">
       <DependentUpon>UserInput.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Gui.resx">
-      <DependentUpon>Gui.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="IntroForm.resx">
       <DependentUpon>IntroForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,12 +157,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="level3Control.resx">
       <DependentUpon>level3Control.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm3x3x3.resx">
-      <DependentUpon>MainForm3x3x3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm4x4x4.resx">
-      <DependentUpon>MainForm4x4x4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="level4Control.resx">
       <DependentUpon>level4Control.cs</DependentUpon>
@@ -188,6 +170,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QubicMainForm.resx">
+      <DependentUpon>QubicMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RulesForm.resx">
       <DependentUpon>RulesForm.cs</DependentUpon>
     </EmbeddedResource>
