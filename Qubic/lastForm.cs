@@ -12,6 +12,7 @@ namespace Qubic
 {
     public partial class lastForm : Form
     {
+        public event EventHandler<bool> closedLast;
         public lastForm(string player, int result)
         {
             InitializeComponent();
@@ -19,6 +20,11 @@ namespace Qubic
                 nameWinner.Text = "Igra je završila nerješeno!";
             else
                 nameWinner.Text += player;
+        }
+
+        private void lastForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (closedLast != null) closedLast(this,true);
         }
     }
 }

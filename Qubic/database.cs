@@ -20,13 +20,13 @@ namespace Qubic
         }
         public void insert(string pX, string pO, string type, int res, int nbMoves)
         {
-            string c = @"INSERT INTO Results "
+            string c = @"INSERT INTO Results"
                         + "(Player_X, Player_O, Result, Moves, Type, Date) "
                         + "VALUES "
-                        + "(" + pX + ", " + pO + ", " + res.ToString() 
-                        + ", " + nbMoves.ToString() + ", " + type
-                        + ", " + DateTime.Today.ToString() + ");";
-            //Console.WriteLine(nbWins);
+                        + "('" + pX + "', '" + pO + "', " + res.ToString()
+                        + ", " + nbMoves.ToString() + ",'" + type //+ "')";
+                        + "', CONVERT(DATETIME,'" + DateTime.Today.ToString() + "'));";
+            
 
             SqlCommand com = new SqlCommand(c, conn);
 

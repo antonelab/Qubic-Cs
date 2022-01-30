@@ -47,11 +47,11 @@ namespace Qubic
             // 
             this.nameWinner.AutoSize = true;
             this.nameWinner.Font = new System.Drawing.Font("Stencil", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameWinner.Location = new System.Drawing.Point(72, 213);
+            this.nameWinner.Location = new System.Drawing.Point(36, 214);
             this.nameWinner.Name = "nameWinner";
-            this.nameWinner.Size = new System.Drawing.Size(340, 59);
+            this.nameWinner.Size = new System.Drawing.Size(303, 47);
             this.nameWinner.TabIndex = 1;
-            this.nameWinner.Text = "Pobjedio je ";
+            this.nameWinner.Text = "Pobjednik je ";
             // 
             // lastForm
             // 
@@ -63,6 +63,7 @@ namespace Qubic
             this.Controls.Add(this.label1);
             this.Name = "lastForm";
             this.Text = "Kraj igre";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.lastForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

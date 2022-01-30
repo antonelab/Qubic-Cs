@@ -16,6 +16,7 @@ namespace Qubic
         private database db;
         private String xPlayer, oPlayer;
         int type;
+        bool flagSaved = false;
 
         static public string label = "X";
         static public QubicGame game;
@@ -68,25 +69,24 @@ namespace Qubic
             ResumeLayout();
         }
 
-        public void handleWinner(object sender, Tuple<Player,int> e)
+        public void handleWinner(object sender, int e)
         {
-            //MessageBox.Show(e.id().ToString());
-            lastForm last = new lastForm(e.Item1.name, e.Item2);
+            lastForm last;
+            if (e == 1)  last = new lastForm(xPlayer, e);
+            else if (e == 0) last = new lastForm(oPlayer, e);
+            else last = new lastForm(oPlayer, e);
             if (this.InvokeRequired)
             {
                 Action handle = delegate { handleWinner(sender, e); };
                 this.Invoke(handle);
                 return;
             }
+            /*
             // Show testDialog as a modal dialog and determine if DialogResult = OK.
             if (last.ShowDialog(this) == DialogResult.OK)
             {
                 //tu se ugasi igra
                 MessageBox.Show("Gasim i spremam");
-
-                /*
-                db.insert(...)
-                 */
             }
             else
             {
@@ -94,6 +94,17 @@ namespace Qubic
                 MessageBox.Show("Gasim ne spremam");
             }
             last.Dispose();
+            */
+            last.Show();
+            db.insert(xPlayer, oPlayer, "4x4x4", e, nb_moves);
+            flagSaved = true;
+            last.closedLast += (s, e_bool) =>
+            {
+                if (e_bool)
+                {
+                    this.Close();
+                }
+            };
         }
         public void handleBtnClicked(object sender, Move m)
         {
@@ -179,18 +190,23 @@ namespace Qubic
             //korisnik gasi
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                if (MessageBox.Show(this,
-                         "Jeste li sigurni da želite izaći\n iz igre bez spremanja rezultata?",
-                         "Oprez - izlazak",
-                         MessageBoxButtons.OKCancel,
-                         MessageBoxIcon.Question) == DialogResult.Cancel)
+                if (!flagSaved)
                 {
-                    e.Cancel = true;
+                    if (MessageBox.Show(this,
+                             "Jeste li sigurni da želite izaći\n iz igre bez spremanja rezultata?",
+                             "Oprez - izlazak",
+                             MessageBoxButtons.OKCancel,
+                             MessageBoxIcon.Question) == DialogResult.Cancel)
+                    {
+                        e.Cancel = true;
+                    }
+                    else
+                    {
+                        if (closed != null) closed(this, true);
+                    }
                 }
                 else
-                {
                     if (closed != null) closed(this, true);
-                }
             }            
         }
 
@@ -201,12 +217,16 @@ namespace Qubic
 
         private void predajaXIgračaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            db.insert(xPlayer, oPlayer, "4x4x4", 1, nb_moves);
+            db.insert(xPlayer, oPlayer, "4x4x4", 0, nb_moves);
+            flagSaved = true;
+            this.Close();
         }
 
         private void predajaOIgračaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            db.insert(xPlayer, oPlayer, "4x4x4", 0, nb_moves);
+            db.insert(xPlayer, oPlayer, "4x4x4", 1, nb_moves);
+            flagSaved = true;
+            this.Close();
         }
 
         private void oStatMenu_Click(object sender, EventArgs e)
