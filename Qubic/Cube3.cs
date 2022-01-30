@@ -72,10 +72,10 @@ namespace Qubic
         {
             for (int i = 0; i < 3; i++)
             {
-                cube[i] = new char[0][];
+                cube[i] = new char[3][];
                 for (int j = 0; j < 3; j++)
                 {
-                    cube[i][j] = new char[4];
+                    cube[i][j] = new char[3];
                 }
             }
             mNumber =0;

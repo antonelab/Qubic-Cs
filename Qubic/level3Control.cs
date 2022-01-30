@@ -28,5 +28,10 @@ namespace Qubic
                 btnClicked(sender, Tuple.Create(i, j));
             }
         }
+
+        public Object this[string key]
+        {
+            get => this.Controls[key];
+        }
     }
 }

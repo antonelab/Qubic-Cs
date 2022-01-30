@@ -42,97 +42,115 @@ namespace Qubic
             // 
             // b00
             // 
-            this.b00.Location = new System.Drawing.Point(7, 11);
+            this.b00.Location = new System.Drawing.Point(5, 9);
+            this.b00.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.b00.Name = "b00";
-            this.b00.Size = new System.Drawing.Size(50, 50);
+            this.b00.Size = new System.Drawing.Size(38, 41);
             this.b00.TabIndex = 0;
+            this.b00.Tag = "00";
             this.b00.Text = " ";
             this.b00.UseVisualStyleBackColor = true;
             this.b00.Click += new System.EventHandler(this.onClick);
             // 
             // b01
             // 
-            this.b01.Location = new System.Drawing.Point(62, 11);
+            this.b01.Location = new System.Drawing.Point(46, 9);
+            this.b01.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.b01.Name = "b01";
-            this.b01.Size = new System.Drawing.Size(50, 50);
+            this.b01.Size = new System.Drawing.Size(38, 41);
             this.b01.TabIndex = 1;
+            this.b01.Tag = "01";
             this.b01.Text = " ";
             this.b01.UseVisualStyleBackColor = true;
             this.b01.Click += new System.EventHandler(this.onClick);
             // 
             // b02
             // 
-            this.b02.Location = new System.Drawing.Point(118, 11);
+            this.b02.Location = new System.Drawing.Point(88, 9);
+            this.b02.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.b02.Name = "b02";
-            this.b02.Size = new System.Drawing.Size(50, 50);
+            this.b02.Size = new System.Drawing.Size(38, 41);
             this.b02.TabIndex = 2;
+            this.b02.Tag = "02";
             this.b02.Text = " ";
             this.b02.UseVisualStyleBackColor = true;
             this.b02.Click += new System.EventHandler(this.onClick);
             // 
             // b12
             // 
-            this.b12.Location = new System.Drawing.Point(118, 67);
+            this.b12.Location = new System.Drawing.Point(88, 54);
+            this.b12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.b12.Name = "b12";
-            this.b12.Size = new System.Drawing.Size(50, 50);
+            this.b12.Size = new System.Drawing.Size(38, 41);
             this.b12.TabIndex = 5;
+            this.b12.Tag = "12";
             this.b12.Text = " ";
             this.b12.UseVisualStyleBackColor = true;
             this.b12.Click += new System.EventHandler(this.onClick);
             // 
             // b11
             // 
-            this.b11.Location = new System.Drawing.Point(62, 67);
+            this.b11.Location = new System.Drawing.Point(46, 54);
+            this.b11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.b11.Name = "b11";
-            this.b11.Size = new System.Drawing.Size(50, 50);
+            this.b11.Size = new System.Drawing.Size(38, 41);
             this.b11.TabIndex = 4;
+            this.b11.Tag = "11";
             this.b11.Text = " ";
             this.b11.UseVisualStyleBackColor = true;
             this.b11.Click += new System.EventHandler(this.onClick);
             // 
             // b10
             // 
-            this.b10.Location = new System.Drawing.Point(7, 67);
+            this.b10.Location = new System.Drawing.Point(5, 54);
+            this.b10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.b10.Name = "b10";
-            this.b10.Size = new System.Drawing.Size(50, 50);
+            this.b10.Size = new System.Drawing.Size(38, 41);
             this.b10.TabIndex = 3;
+            this.b10.Tag = "10";
             this.b10.Text = " ";
             this.b10.UseVisualStyleBackColor = true;
             this.b10.Click += new System.EventHandler(this.onClick);
             // 
             // b22
             // 
-            this.b22.Location = new System.Drawing.Point(118, 123);
+            this.b22.Location = new System.Drawing.Point(88, 100);
+            this.b22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.b22.Name = "b22";
-            this.b22.Size = new System.Drawing.Size(50, 50);
+            this.b22.Size = new System.Drawing.Size(38, 41);
             this.b22.TabIndex = 8;
+            this.b22.Tag = "22";
             this.b22.Text = " ";
             this.b22.UseVisualStyleBackColor = true;
             this.b22.Click += new System.EventHandler(this.onClick);
             // 
             // b21
             // 
-            this.b21.Location = new System.Drawing.Point(62, 123);
+            this.b21.Location = new System.Drawing.Point(46, 100);
+            this.b21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.b21.Name = "b21";
-            this.b21.Size = new System.Drawing.Size(50, 50);
+            this.b21.Size = new System.Drawing.Size(38, 41);
             this.b21.TabIndex = 7;
+            this.b21.Tag = "21";
             this.b21.Text = " ";
             this.b21.UseVisualStyleBackColor = true;
             this.b21.Click += new System.EventHandler(this.onClick);
             // 
             // b20
             // 
-            this.b20.Location = new System.Drawing.Point(7, 123);
+            this.b20.Location = new System.Drawing.Point(5, 100);
+            this.b20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.b20.Name = "b20";
-            this.b20.Size = new System.Drawing.Size(50, 50);
+            this.b20.Size = new System.Drawing.Size(38, 41);
             this.b20.TabIndex = 6;
+            this.b20.Tag = "20";
             this.b20.Text = " ";
             this.b20.UseVisualStyleBackColor = true;
             this.b20.Click += new System.EventHandler(this.onClick);
             // 
             // level3Control
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.b22);
             this.Controls.Add(this.b21);
@@ -143,8 +161,9 @@ namespace Qubic
             this.Controls.Add(this.b02);
             this.Controls.Add(this.b01);
             this.Controls.Add(this.b00);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "level3Control";
-            this.Size = new System.Drawing.Size(190, 182);
+            this.Size = new System.Drawing.Size(142, 148);
             this.ResumeLayout(false);
 
         }

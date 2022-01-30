@@ -22,7 +22,7 @@ namespace Qubic
         public Move hint = null;
         public Tuple<Player, Player> players = Tuple.Create(new Player('X'), new Player('O'));
         public Player player;
-        static public int nb_moves = 0;
+        public int nb_moves = 0;
         static public Thread gameThread;
 
         public event EventHandler<Move> newHint;
@@ -36,13 +36,24 @@ namespace Qubic
             this.oPlayer = oPlayer;
             this.type = type;
             InitializeComponent();
+            ResumeLayout();
+            if(type == 3)
+            {
+                this.Controls.Remove(this.tableControl);
+                this.tableControl = new Qubic.table3Control();
+                this.Controls.Add(this.tableControl);
+                this.Text = "Qubic - 3x3x3 varijanta";
+                this.BackColor = Color.RosyBrown;
+                tableControl.BackColor = Color.RosyBrown;
+                hintButton.BackColor = Color.DarkSeaGreen;
+                xNameLabel.ForeColor = Color.DarkSeaGreen;
+            }
             this.ClientSize = new System.Drawing.Size(950, 960);
             this.MinimumSize = new System.Drawing.Size(900, 930);
-            SuspendLayout();
             db = new database();
 
             FormClosing += (sender, e) => { gameThread.Interrupt(); gameThread.Join(); };
-            table41.btnClicked += handleBtnClicked;
+            tableControl.btnClicked += handleBtnClicked;
             newHint += handleHint;
             xNameLabel.Text = "IME: " + xPlayer;
             oNameLabel.Text = "IME: " + oPlayer;
@@ -65,7 +76,6 @@ namespace Qubic
                 statMenu.DropDownItems[1].Enabled = false;
                 closeMenu.DropDownItems[1].Enabled = false;
             }
-            ResumeLayout();
         }
 
         public void handleWinner(object sender, Tuple<Player,int> e)
@@ -104,7 +114,7 @@ namespace Qubic
             Button button = (Button)sender;
             button.Enabled = false;
             button.Text = "" + id;
-            if (hint != null) table41.setColor(hint.ToTuple(), default(Color));
+            if (hint != null) tableControl.setColor(hint.ToTuple(), default(Color));
             hint = null;
             hintButton.Enabled = false;
             game.move = m;
@@ -136,7 +146,7 @@ namespace Qubic
             newHint(this, m);
             if ((id == 'X' && xPlayer.Equals("kompjuter")) || (id == 'O' && oPlayer.Equals("kompjuter")))
             {
-                table41.clickButton(m.ToTuple());
+                tableControl.clickButton(m.ToTuple());
             }
         }
 
@@ -159,7 +169,7 @@ namespace Qubic
 
         private void hintButton_Click(object sender, EventArgs e)
         {
-            table41.setColor(hint.ToTuple(), Color.LightBlue);
+            tableControl.setColor(hint.ToTuple(), Color.LightBlue);
             
         }
         private void xStatMenu_Click(object sender, EventArgs e)

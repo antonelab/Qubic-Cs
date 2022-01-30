@@ -14,8 +14,9 @@ namespace Qubic
     {
         public table3Control()
         {
+            type = 3;
             InitializeComponent();
-            setEvents(3);
+            setEvents();
         }
     }
 }

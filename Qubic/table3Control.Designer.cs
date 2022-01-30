@@ -29,50 +29,54 @@ namespace Qubic
         /// </summary>
         private void InitializeComponent()
         {
-            this.level3Control1 = new Qubic.level3Control();
-            this.level3Control2 = new Qubic.level3Control();
-            this.level3Control3 = new Qubic.level3Control();
+            this.lControl3 = new Qubic.level3Control();
+            this.lControl2 = new Qubic.level3Control();
+            this.lControl1 = new Qubic.level3Control();
             this.SuspendLayout();
             // 
-            // level3Control1
+            // lControl3
             // 
-            this.level3Control1.Location = new System.Drawing.Point(3, 368);
-            this.level3Control1.Name = "level3Control1";
-            this.level3Control1.Size = new System.Drawing.Size(185, 177);
-            this.level3Control1.TabIndex = 0;
+            this.lControl3.Location = new System.Drawing.Point(2, 299);
+            this.lControl3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lControl3.Name = "lControl3";
+            this.lControl3.Size = new System.Drawing.Size(139, 144);
+            this.lControl3.TabIndex = 0;
             // 
-            // level3Control2
+            // lControl2
             // 
-            this.level3Control2.Location = new System.Drawing.Point(58, 185);
-            this.level3Control2.Name = "level3Control2";
-            this.level3Control2.Size = new System.Drawing.Size(190, 177);
-            this.level3Control2.TabIndex = 1;
+            this.lControl2.Location = new System.Drawing.Point(44, 150);
+            this.lControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lControl2.Name = "lControl2";
+            this.lControl2.Size = new System.Drawing.Size(142, 144);
+            this.lControl2.TabIndex = 1;
             // 
-            // level3Control3
+            // lControl1
             // 
-            this.level3Control3.Location = new System.Drawing.Point(115, 3);
-            this.level3Control3.Name = "level3Control3";
-            this.level3Control3.Size = new System.Drawing.Size(230, 187);
-            this.level3Control3.TabIndex = 2;
+            this.lControl1.Location = new System.Drawing.Point(86, 2);
+            this.lControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lControl1.Name = "lControl1";
+            this.lControl1.Size = new System.Drawing.Size(172, 152);
+            this.lControl1.TabIndex = 2;
             // 
             // table3Control
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
-            this.Controls.Add(this.level3Control3);
-            this.Controls.Add(this.level3Control2);
-            this.Controls.Add(this.level3Control1);
+            this.Controls.Add(this.lControl1);
+            this.Controls.Add(this.lControl2);
+            this.Controls.Add(this.lControl3);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "table3Control";
-            this.Size = new System.Drawing.Size(320, 570);
+            this.Size = new System.Drawing.Size(240, 463);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private level3Control level3Control1;
-        private level3Control level3Control2;
-        private level3Control level3Control3;
+        private level3Control lControl3;
+        private level3Control lControl2;
+        private level3Control lControl1;
     }
 }

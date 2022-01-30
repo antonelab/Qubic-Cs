@@ -29,64 +29,65 @@ namespace Qubic
         /// </summary>
         private void InitializeComponent()
         {
-            this.l4Form4 = new Qubic.level4Control();
-            this.l4Form3 = new Qubic.level4Control();
-            this.l4Form2 = new Qubic.level4Control();
-            this.l4Form1 = new Qubic.level4Control();
+            this.lControl4 = new Qubic.level4Control();
+            this.lControl3 = new Qubic.level4Control();
+            this.lControl2 = new Qubic.level4Control();
+            this.lControl1 = new Qubic.level4Control();
             this.SuspendLayout();
             // 
-            // l4Form4
+            // lControl4
             // 
-            this.l4Form4.Location = new System.Drawing.Point(0, 680);
-            this.l4Form4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.l4Form4.Name = "l4Form4";
-            this.l4Form4.Size = new System.Drawing.Size(199, 210);
-            this.l4Form4.TabIndex = 0;
+            this.lControl4.Location = new System.Drawing.Point(18, 552);
+            this.lControl4.Margin = new System.Windows.Forms.Padding(2);
+            this.lControl4.Name = "lControl4";
+            this.lControl4.Size = new System.Drawing.Size(149, 171);
+            this.lControl4.TabIndex = 0;
             // 
-            // l4Form3
+            // lControl3
             // 
-            this.l4Form3.Location = new System.Drawing.Point(57, 455);
-            this.l4Form3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.l4Form3.Name = "l4Form3";
-            this.l4Form3.Size = new System.Drawing.Size(207, 211);
-            this.l4Form3.TabIndex = 1;
+            this.lControl3.Location = new System.Drawing.Point(79, 377);
+            this.lControl3.Margin = new System.Windows.Forms.Padding(2);
+            this.lControl3.Name = "lControl3";
+            this.lControl3.Size = new System.Drawing.Size(155, 171);
+            this.lControl3.TabIndex = 1;
             // 
-            // l4Form2
+            // lControl2
             // 
-            this.l4Form2.Location = new System.Drawing.Point(109, 236);
-            this.l4Form2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.l4Form2.Name = "l4Form2";
-            this.l4Form2.Size = new System.Drawing.Size(202, 205);
-            this.l4Form2.TabIndex = 2;
+            this.lControl2.Location = new System.Drawing.Point(121, 197);
+            this.lControl2.Margin = new System.Windows.Forms.Padding(2);
+            this.lControl2.Name = "lControl2";
+            this.lControl2.Size = new System.Drawing.Size(152, 167);
+            this.lControl2.TabIndex = 2;
             // 
-            // l4Form1
+            // lControl1
             // 
-            this.l4Form1.Location = new System.Drawing.Point(161, 14);
-            this.l4Form1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.l4Form1.Name = "l4Form1";
-            this.l4Form1.Size = new System.Drawing.Size(230, 207);
-            this.l4Form1.TabIndex = 3;
+            this.lControl1.Location = new System.Drawing.Point(150, 11);
+            this.lControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.lControl1.Name = "lControl1";
+            this.lControl1.Size = new System.Drawing.Size(172, 168);
+            this.lControl1.TabIndex = 3;
             // 
-            // table4
+            // table4Control
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Controls.Add(this.l4Form1);
-            this.Controls.Add(this.l4Form2);
-            this.Controls.Add(this.l4Form3);
-            this.Controls.Add(this.l4Form4);
-            this.Name = "table4";
-            this.Size = new System.Drawing.Size(407, 890);
+            this.Controls.Add(this.lControl1);
+            this.Controls.Add(this.lControl2);
+            this.Controls.Add(this.lControl3);
+            this.Controls.Add(this.lControl4);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "table4Control";
+            this.Size = new System.Drawing.Size(305, 723);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private level4Control l4Form4;
-        private level4Control l4Form3;
-        private level4Control l4Form2;
-        private level4Control l4Form1;
+        private level4Control lControl4;
+        private level4Control lControl3;
+        private level4Control lControl2;
+        private level4Control lControl1;
     }
 }

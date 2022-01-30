@@ -28,9 +28,23 @@ namespace Qubic
         {
             if (flag == true)
             {
+                //citanje imena igraca
+                string xPlayer;
+                string oPlayer;
+                if (userInput1.xComputer.Checked) xPlayer = "kompjuter";
+                else xPlayer = userInput1.xName.Text;
+                if (userInput1.oComputer.Checked) oPlayer = "kompjuter";
+                else oPlayer = userInput1.oName.Text;
                 this.Hide();
-                var q3 = new MainForm3x3x3();
-                q3.Show();
+                var q4 = new MainForm4x4x4(xPlayer, oPlayer, 3);
+                q4.Show();
+                q4.closed += (s, e_b) =>
+                {
+                    if (e_b)
+                    {
+                        this.Show();
+                    }
+                };
             }
             else
             {
